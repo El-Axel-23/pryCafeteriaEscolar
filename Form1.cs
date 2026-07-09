@@ -16,5 +16,15 @@ namespace pryCafeteriaEscolar
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            configuracion configuracion = new configuracion();
+
+            configuracion.Dock = DockStyle.Fill;
+
+            this.Controls.Add(configuracion);
+        }
+
     }
 }
