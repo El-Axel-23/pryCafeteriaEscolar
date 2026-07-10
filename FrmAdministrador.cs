@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace pryCafeteriaEscolar
 {
-    public partial class Form1 : Form
+    public partial class FrmAdministrador : Form
     {
-        public Form1()
+        public FrmAdministrador()
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            configuracion configuracion = new configuracion();
-
-            configuracion.Dock = DockStyle.Fill;
-
-            this.Controls.Add(configuracion);
-        }
-
     }
 }
