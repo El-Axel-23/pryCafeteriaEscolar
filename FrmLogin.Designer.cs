@@ -125,6 +125,7 @@
             this.Name = "FrmLogin";
             this.Text = "FrmLogin";
             this.TransparencyKey = System.Drawing.Color.Silver;
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
