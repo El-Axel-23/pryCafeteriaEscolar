@@ -72,23 +72,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-=======
     <EmbeddedResource Include="FrmEntradas.resx">
       <DependentUpon>FrmEntradas.cs</DependentUpon>
->>>>>>> f71c000b0533ca8923b5139f800ab28d8346c3f8
-=======
-    <EmbeddedResource Include="FrmEntradas.resx">
-      <DependentUpon>FrmEntradas.cs</DependentUpon>
->>>>>>> f71c000b0533ca8923b5139f800ab28d8346c3f8
-=======
-    <EmbeddedResource Include="FrmEntradas.resx">
-      <DependentUpon>FrmEntradas.cs</DependentUpon>
->>>>>>> f71c000b0533ca8923b5139f800ab28d8346c3f8
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProductos.resx">
       <DependentUpon>FrmProductos.cs</DependentUpon>
