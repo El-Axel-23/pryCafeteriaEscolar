@@ -120,7 +120,7 @@
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "groupBox3";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+
             // 
             // trackTemas
             // 
@@ -176,7 +176,7 @@
             this.label7.Size = new System.Drawing.Size(69, 13);
             this.label7.TabIndex = 13;
             this.label7.Text = "Accesibilidad";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+
             // 
             // groupBox1
             // 
@@ -251,7 +251,7 @@
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 14;
             this.label4.Text = "Direccion";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+
             // 
             // label2
             // 
