@@ -10,16 +10,13 @@ using System.Windows.Forms;
 
 namespace pryCafeteriaEscolar
 {
-    public partial class Ventas : UserControl
+    public partial class FrmEntradas : Form
     {
-        public Ventas()
+        public FrmEntradas()
         {
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
