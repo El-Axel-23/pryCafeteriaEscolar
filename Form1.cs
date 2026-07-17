@@ -26,5 +26,14 @@ namespace pryCafeteriaEscolar
             this.Controls.Add(configuracion);
         }
 
+        private void btnConfiguracion_Click(object sender, EventArgs e)
+        {
+            panelContenedor.Controls.Clear();
+
+            configuracion config = new configuracion();
+            config.Dock = DockStyle.Fill;
+
+            panelContenedor.Controls.Add(config);
+        }
     }
 }
