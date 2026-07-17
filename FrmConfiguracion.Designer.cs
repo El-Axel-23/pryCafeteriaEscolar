@@ -1,6 +1,6 @@
 ﻿namespace pryCafeteriaEscolar
 {
-    partial class configuracion
+    partial class FrmConfiguracion : System.Windows.Forms.UserControl  
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -31,7 +31,19 @@
             this.bttnGuardar = new System.Windows.Forms.Button();
             this.bttnCerrar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dateFecha = new System.Windows.Forms.DateTimePicker();
+            this.txtbxZona = new System.Windows.Forms.TextBox();
+            this.txtbxHora = new System.Windows.Forms.TextBox();
+            this.txtbxImp = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.trackTemas = new System.Windows.Forms.TrackBar();
             this.cmbbxFuente = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -48,18 +60,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtbxImp = new System.Windows.Forms.TextBox();
-            this.txtbxHora = new System.Windows.Forms.TextBox();
-            this.txtbxZona = new System.Windows.Forms.TextBox();
-            this.dateFecha = new System.Windows.Forms.DateTimePicker();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackTemas)).BeginInit();
@@ -104,6 +104,88 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
             // 
+            // dateFecha
+            // 
+            this.dateFecha.Location = new System.Drawing.Point(122, 84);
+            this.dateFecha.Name = "dateFecha";
+            this.dateFecha.Size = new System.Drawing.Size(196, 20);
+            this.dateFecha.TabIndex = 22;
+            // 
+            // txtbxZona
+            // 
+            this.txtbxZona.Location = new System.Drawing.Point(122, 157);
+            this.txtbxZona.Name = "txtbxZona";
+            this.txtbxZona.Size = new System.Drawing.Size(100, 20);
+            this.txtbxZona.TabIndex = 21;
+            // 
+            // txtbxHora
+            // 
+            this.txtbxHora.Location = new System.Drawing.Point(122, 119);
+            this.txtbxHora.Name = "txtbxHora";
+            this.txtbxHora.Size = new System.Drawing.Size(100, 20);
+            this.txtbxHora.TabIndex = 20;
+            // 
+            // txtbxImp
+            // 
+            this.txtbxImp.Location = new System.Drawing.Point(122, 50);
+            this.txtbxImp.Name = "txtbxImp";
+            this.txtbxImp.Size = new System.Drawing.Size(100, 20);
+            this.txtbxImp.TabIndex = 18;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(228, 53);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(15, 13);
+            this.label16.TabIndex = 14;
+            this.label16.Text = "%";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 157);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(67, 13);
+            this.label15.TabIndex = 17;
+            this.label15.Text = "Zona horaria";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 119);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(85, 13);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "Hora del sistema";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 16);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(127, 13);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "Configuracion del sistema";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 84);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(37, 13);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "Fecha";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 50);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(50, 13);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Impuesto";
+            // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.SandyBrown;
@@ -120,7 +202,24 @@
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "groupBox3";
-
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(280, 69);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(41, 13);
+            this.label18.TabIndex = 19;
+            this.label18.Text = "Oscuro";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(197, 69);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(31, 13);
+            this.label17.TabIndex = 18;
+            this.label17.Text = "Claro";
             // 
             // trackTemas
             // 
@@ -131,7 +230,6 @@
             this.trackTemas.Size = new System.Drawing.Size(110, 45);
             this.trackTemas.TabIndex = 12;
             this.trackTemas.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackTemas.Scroll += new System.EventHandler(this.trackTemas_Scroll);
             // 
             // cmbbxFuente
             // 
@@ -148,7 +246,6 @@
             this.cmbbxFuente.Name = "cmbbxFuente";
             this.cmbbxFuente.Size = new System.Drawing.Size(121, 21);
             this.cmbbxFuente.TabIndex = 17;
-            this.cmbbxFuente.SelectedIndexChanged += new System.EventHandler(this.cmbbxFuente_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -176,7 +273,6 @@
             this.label7.Size = new System.Drawing.Size(69, 13);
             this.label7.TabIndex = 13;
             this.label7.Text = "Accesibilidad";
-
             // 
             // groupBox1
             // 
@@ -251,7 +347,6 @@
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 14;
             this.label4.Text = "Direccion";
-
             // 
             // label2
             // 
@@ -281,106 +376,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "CONFIGURACION";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 16);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(127, 13);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "Configuracion del sistema";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 50);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(50, 13);
-            this.label12.TabIndex = 14;
-            this.label12.Text = "Impuesto";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 84);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(37, 13);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "Fecha";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 119);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(85, 13);
-            this.label14.TabIndex = 16;
-            this.label14.Text = "Hora del sistema";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 157);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(67, 13);
-            this.label15.TabIndex = 17;
-            this.label15.Text = "Zona horaria";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(228, 53);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(15, 13);
-            this.label16.TabIndex = 14;
-            this.label16.Text = "%";
-            // 
-            // txtbxImp
-            // 
-            this.txtbxImp.Location = new System.Drawing.Point(122, 50);
-            this.txtbxImp.Name = "txtbxImp";
-            this.txtbxImp.Size = new System.Drawing.Size(100, 20);
-            this.txtbxImp.TabIndex = 18;
-            // 
-            // txtbxHora
-            // 
-            this.txtbxHora.Location = new System.Drawing.Point(122, 119);
-            this.txtbxHora.Name = "txtbxHora";
-            this.txtbxHora.Size = new System.Drawing.Size(100, 20);
-            this.txtbxHora.TabIndex = 20;
-            // 
-            // txtbxZona
-            // 
-            this.txtbxZona.Location = new System.Drawing.Point(122, 157);
-            this.txtbxZona.Name = "txtbxZona";
-            this.txtbxZona.Size = new System.Drawing.Size(100, 20);
-            this.txtbxZona.TabIndex = 21;
-            // 
-            // dateFecha
-            // 
-            this.dateFecha.Location = new System.Drawing.Point(122, 84);
-            this.dateFecha.Name = "dateFecha";
-            this.dateFecha.Size = new System.Drawing.Size(196, 20);
-            this.dateFecha.TabIndex = 22;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(197, 69);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(31, 13);
-            this.label17.TabIndex = 18;
-            this.label17.Text = "Claro";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(280, 69);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(41, 13);
-            this.label18.TabIndex = 19;
-            this.label18.Text = "Oscuro";
-            // 
             // configuracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -392,8 +387,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "configuracion";
-            this.Size = new System.Drawing.Size(834, 573);
-            this.Load += new System.EventHandler(this.configuracion_Load);
+            this.Size = new System.Drawing.Size(895, 573);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
