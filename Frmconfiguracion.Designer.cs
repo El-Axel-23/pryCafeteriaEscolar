@@ -1,7 +1,11 @@
-﻿namespace pryCafeteriaEscolar
+﻿using System;
+using System.Windows.Forms;
+
+namespace pryCafeteriaEscolar
 {
-    partial class configuracion
+    public partial class configuracion : Form
     {
+        
         /// <summary> 
         /// Variable del diseñador necesaria.
         /// </summary>
@@ -404,6 +408,21 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void configuracion_Load(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void cmbbxFuente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void trackTemas_Scroll(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

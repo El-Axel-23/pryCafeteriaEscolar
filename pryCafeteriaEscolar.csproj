@@ -99,16 +99,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base de datos\DataAcces.cs" />
-    <Compile Include="configuracion.cs">
+    <Compile Include="Frmconfiguracion.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="configuracion.Designer.cs">
-      <DependentUpon>configuracion.cs</DependentUpon>
+    <Compile Include="Frmconfiguracion.Designer.cs">
+      <DependentUpon>Frmconfiguracion.cs</DependentUpon>
     </Compile>
-    <Compile Include="configuracion1.Designer.cs">
+    <Compile Include="Frmconfiguracion1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>configuracion.resx</DependentUpon>
+      <DependentUpon>Frmconfiguracion.resx</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -161,10 +161,10 @@
     <Compile Include="Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="configuracion.resx">
-      <DependentUpon>configuracion.cs</DependentUpon>
+    <EmbeddedResource Include="Frmconfiguracion.resx">
+      <DependentUpon>Frmconfiguracion.cs</DependentUpon>
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>configuracion1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Frmconfiguracion1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdministrador.resx">
       <DependentUpon>FrmAdministrador.cs</DependentUpon>
