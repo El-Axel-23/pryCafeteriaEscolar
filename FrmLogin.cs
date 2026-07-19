@@ -63,7 +63,7 @@ namespace pryCafeteriaEscolar
                                 pantallaPrincipal.Show();
                                 this.Hide();
                             }
-                            else if("AdminEncargado")
+                            else if(txtUser == "AdminEncargado")
                             {
                                 FrmAdministrador pantallaPrincipal = new FrmAdministrador();
                                 pantallaPrincipal.Show();
