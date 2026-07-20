@@ -21,16 +21,7 @@ namespace pryCafeteriaEscolar
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            try
-            {
-                DataAcces con = new DataAcces();
-                con.Dataacces();
-                MessageBox.Show("coneccion ecitosa");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
            
         }
 
