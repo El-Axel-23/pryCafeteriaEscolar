@@ -54,6 +54,7 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=10.0.0.10, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.10.0.10\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+<<<<<<< HEAD
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=10.0.0.10, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Extensions.DependencyInjection.Abstractions.10.0.10\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
@@ -66,6 +67,11 @@
     <Reference Include="MySqlConnector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
       <HintPath>packages\MySqlConnector.2.6.1\lib\net471\MySqlConnector.dll</HintPath>
     </Reference>
+=======
+    <Reference Include="MySql.Data, Version=9.7.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.9.7.0\lib\net462\MySql.Data.dll</HintPath>
+    </Reference>
+>>>>>>> fb68aaf4acb98bdd1d1191b9c4bec0d359b54b82
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
@@ -75,9 +81,12 @@
       <HintPath>packages\System.Configuration.ConfigurationManager.10.0.10\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+<<<<<<< HEAD
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=10.0.0.10, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Diagnostics.DiagnosticSource.10.0.10\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
+=======
+>>>>>>> fb68aaf4acb98bdd1d1191b9c4bec0d359b54b82
     <Reference Include="System.IO.Pipelines, Version=10.0.0.10, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.IO.Pipelines.10.0.10\lib\net462\System.IO.Pipelines.dll</HintPath>
     </Reference>
@@ -110,17 +119,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="FrmConfiguracion.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="FrmConfiguracion.Designer.cs">
       <DependentUpon>FrmConfiguracion.cs</DependentUpon>
     </Compile>
+=======
+    <Compile Include="Base de datos\DataAcces.cs" />
+>>>>>>> fb68aaf4acb98bdd1d1191b9c4bec0d359b54b82
     <Compile Include="FrmEntradas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmEntradas.Designer.cs">
       <DependentUpon>FrmEntradas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\FrmNuevoproducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\FrmNuevoproducto.Designer.cs">
+      <DependentUpon>FrmNuevoproducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Productos\FrmProductos.cs">
       <SubType>Form</SubType>
@@ -132,6 +151,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmEntradas.resx">
       <DependentUpon>FrmEntradas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\FrmNuevoproducto.resx">
+      <DependentUpon>FrmNuevoproducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\FrmProductos.resx">
       <DependentUpon>FrmProductos.cs</DependentUpon>
@@ -161,9 +183,12 @@
     <Compile Include="Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <EmbeddedResource Include="FrmConfiguracion.resx">
       <DependentUpon>FrmConfiguracion.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> fb68aaf4acb98bdd1d1191b9c4bec0d359b54b82
     <EmbeddedResource Include="FrmAdministrador.resx">
       <DependentUpon>FrmAdministrador.cs</DependentUpon>
     </EmbeddedResource>

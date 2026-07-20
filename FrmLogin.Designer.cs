@@ -49,11 +49,19 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
+<<<<<<< HEAD
             this.groupBox1.Location = new System.Drawing.Point(57, 50);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Size = new System.Drawing.Size(491, 274);
+=======
+            this.groupBox1.Location = new System.Drawing.Point(86, 78);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(737, 421);
+>>>>>>> fb68aaf4acb98bdd1d1191b9c4bec0d359b54b82
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -61,9 +69,15 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+<<<<<<< HEAD
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(250, 274);
+=======
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(376, 421);
+>>>>>>> fb68aaf4acb98bdd1d1191b9c4bec0d359b54b82
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -72,10 +86,17 @@
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button1.ForeColor = System.Drawing.Color.Transparent;
+<<<<<<< HEAD
             this.button1.Location = new System.Drawing.Point(336, 210);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(78, 28);
+=======
+            this.button1.Location = new System.Drawing.Point(504, 322);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(117, 42);
+>>>>>>> fb68aaf4acb98bdd1d1191b9c4bec0d359b54b82
             this.button1.TabIndex = 4;
             this.button1.Text = "Ingresar";
             this.button1.UseVisualStyleBackColor = false;
@@ -83,19 +104,33 @@
             // 
             // textBox2
             // 
+<<<<<<< HEAD
             this.textBox2.Location = new System.Drawing.Point(368, 127);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(76, 20);
+=======
+            this.textBox2.Location = new System.Drawing.Point(552, 195);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(112, 26);
+>>>>>>> fb68aaf4acb98bdd1d1191b9c4bec0d359b54b82
             this.textBox2.TabIndex = 3;
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.White;
+<<<<<<< HEAD
             this.textBox1.Location = new System.Drawing.Point(368, 76);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(76, 20);
+=======
+            this.textBox1.Location = new System.Drawing.Point(552, 118);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(112, 26);
+>>>>>>> fb68aaf4acb98bdd1d1191b9c4bec0d359b54b82
             this.textBox1.TabIndex = 2;
             // 
             // label2
@@ -103,10 +138,16 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
+<<<<<<< HEAD
             this.label2.Location = new System.Drawing.Point(283, 127);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 18);
+=======
+            this.label2.Location = new System.Drawing.Point(424, 195);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 26);
+>>>>>>> fb68aaf4acb98bdd1d1191b9c4bec0d359b54b82
             this.label2.TabIndex = 1;
             this.label2.Text = "Contraseña:";
             // 
@@ -115,15 +156,22 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
+<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(306, 76);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 18);
+=======
+            this.label1.Location = new System.Drawing.Point(459, 118);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 26);
+>>>>>>> fb68aaf4acb98bdd1d1191b9c4bec0d359b54b82
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario:";
             // 
             // FrmLogin
             // 
+<<<<<<< HEAD
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.NavajoWhite;
@@ -132,6 +180,16 @@
             this.ForeColor = System.Drawing.Color.IndianRed;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.NavajoWhite;
+            this.ClientSize = new System.Drawing.Size(900, 562);
+            this.Controls.Add(this.groupBox1);
+            this.ForeColor = System.Drawing.Color.IndianRed;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+>>>>>>> fb68aaf4acb98bdd1d1191b9c4bec0d359b54b82
             this.Name = "FrmLogin";
             this.Text = "FrmLogin";
             this.TransparencyKey = System.Drawing.Color.Silver;
