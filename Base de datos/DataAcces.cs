@@ -11,7 +11,7 @@ namespace pryCafeteriaEscolar.Base_de_datos
     {
         private string cadena = "server=localhost;" + "Database=cafeteriadb;" + "Uid=root;" + "Password=;" + "Port=3306;";
 
-        public MySqlConnection conexion()
+        public MySqlConnection Dataacces()
         {
             MySqlConnection conexion = new MySqlConnection(cadena);
             conexion.Open();
