@@ -48,13 +48,13 @@ namespace pryCafeteriaEscolar
 
                         object resultado = comando.ExecuteScalar();
 
-                        // Validamos que no sea nulov(si es nulo, significa que el usuario o contraseña no existen)
+                        // Validamos que no sea nulo(si es nulo, significa que el usuario o contraseña no existen)
                         if (resultado != null)
                         {
                             //Convertimos lo que devolvió la base de datos a texto limpio (el rol)
                             string rolUsuario = resultado.ToString();
 
-                            //1. Si el rol que guardó tu compañero en la BD es "Administrador"
+                            //1. Si el rol que se guardo en la BD es "Administrador"
                             if (rolUsuario == "Administrador")
                             {
                                 MessageBox.Show("¡Bienvenido al sistema!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -62,7 +62,7 @@ namespace pryCafeteriaEscolar
                                 pantallaPrincipalAdministrador.Show();
                                 this.Hide();
                             }
-                            //2. Si el rol que guardó tu compañero en la BD es "Empleado"
+                            //2. Si el rol que se guardó en la BD es "Empleado"
                             else if (rolUsuario == "Empleado")
                             {
                                 MessageBox.Show("¡Bienvenido al sistema!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -70,7 +70,7 @@ namespace pryCafeteriaEscolar
                                 pantallaPrincipalEmpleado.Show();
                                 this.Hide();
                             }
-                            //Por si acaso hay algún error de dedo en la base de datos (ej. "empleado" en minúscula)
+                            //De lo contrario se mandará un mensaje de rol no reconocido
                             else
                             {
                                 MessageBox.Show("Rol de usuario no reconocido (" + rolUsuario + ").", "Error de Rol", MessageBoxButtons.OK, MessageBoxIcon.Warning);
