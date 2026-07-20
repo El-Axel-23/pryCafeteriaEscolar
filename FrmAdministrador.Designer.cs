@@ -70,7 +70,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.NavajoWhite;
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(231)))), ((int)(((byte)(208)))));
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox8);
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox7);
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox6);
@@ -290,7 +290,8 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmAdministrador";
-            this.Text = "FrmAdministrador";
+            this.Text = "Cafetería Escolar";
+            this.TransparencyKey = System.Drawing.Color.RosyBrown;
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
