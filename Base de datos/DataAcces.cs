@@ -14,7 +14,7 @@ namespace pryCafeteriaEscolar.Base_de_datos
         public MySqlConnection Dataacces()
         {
             MySqlConnection conexion = new MySqlConnection(cadena);
-            conexion.Open();
+            conexion.Open(); 
             return conexion;
         }
     }
