@@ -8,25 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-using System;
-using System.Drawing;
-using System.Windows.Forms;
-
-namespace pryCafeteriaEscolar
+namespace pryCafeteriaEscolar.Configuracion
 {
-    public partial class FrmConfiguracion : UserControl
+    public partial class FrmConfig : Form
     {
-        public FrmConfiguracion()
+        public FrmConfig()
         {
             InitializeComponent();
         }
 
-        private void configuracion_Load(object sender, EventArgs e)
+        private void FrmConfig_Load(object sender, EventArgs e)
         {
+            if (cmbbxFuente.SelectedIndex == -1)
+            {
+                cmbbxFuente.SelectedIndex = 0;
+            }
             CambiarTema();
         }
-
         private void CambiarColorControles(Control padre, Color fondo, Color texto)
         {
             foreach (Control c in padre.Controls)
@@ -40,10 +38,9 @@ namespace pryCafeteriaEscolar
                 }
             }
         }
-
         private void CambiarTema()
         {
-            if (trackTemas != null && trackTemas.Value == 0)
+            if (trackTemas.Value == 0)
             {
                 this.BackColor = Color.WhiteSmoke;
                 CambiarColorControles(this, Color.WhiteSmoke, Color.Black);
@@ -54,25 +51,24 @@ namespace pryCafeteriaEscolar
                 CambiarColorControles(this, Color.FromArgb(45, 45, 48), Color.White);
             }
         }
-
         private void trackTemas_Scroll(object sender, EventArgs e)
         {
             CambiarTema();
         }
-
         private void cmbbxFuente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (float.TryParse(cmbbxFuente.Text, out float tamaño))
-            {
-                CambiarFuente(this, tamaño);
-            }
+
         }
 
         private void CambiarFuente(Control padre, float tamaño)
         {
             foreach (Control c in padre.Controls)
             {
-                c.Font = new Font(c.Font.FontFamily, tamaño, c.Font.Style);
+                try
+                {
+                    c.Font = new Font(c.Font.FontFamily, tamaño, c.Font.Style);
+                }
+                catch { }
 
                 if (c.HasChildren)
                 {
@@ -80,5 +76,27 @@ namespace pryCafeteriaEscolar
                 }
             }
         }
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (trackTemas.Value == 0)
+            {
+                ConfigGlobal.ColorFondo = Color.White;
+                ConfigGlobal.ColorTexto = Color.Black;
+            }
+            else
+            {
+                ConfigGlobal.ColorFondo = Color.Black;
+                ConfigGlobal.ColorTexto = Color.White;
+            }
+
+            if (cmbbxFuente.SelectedItem != null &&
+                float.TryParse(cmbbxFuente.SelectedItem.ToString(), out float nuevoTamanio))
+            {
+                ConfigGlobal.TamanioFuente = nuevoTamanio;
+            }
+
+            ConfigGlobal.ActualizarVentanasAbiertas();
+        }
+
     }
 }
