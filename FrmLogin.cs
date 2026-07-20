@@ -24,7 +24,7 @@ namespace pryCafeteriaEscolar
             try
             {
                 DataAcces con = new DataAcces();
-                con.conexion();
+                con.Dataacces();
                 MessageBox.Show("coneccion ecitosa");
             }
             catch (Exception ex)
