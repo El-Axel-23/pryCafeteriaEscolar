@@ -99,23 +99,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base de datos\DataAcces.cs" />
-    <Compile Include="Frmconfiguracion.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Frmconfiguracion.Designer.cs">
-      <DependentUpon>Frmconfiguracion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frmconfiguracion1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Frmconfiguracion.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmEntradas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,11 +153,6 @@
     <Compile Include="Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Frmconfiguracion.resx">
-      <DependentUpon>Frmconfiguracion.cs</DependentUpon>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Frmconfiguracion1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmAdministrador.resx">
       <DependentUpon>FrmAdministrador.cs</DependentUpon>
     </EmbeddedResource>

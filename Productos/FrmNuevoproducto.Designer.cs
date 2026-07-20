@@ -123,7 +123,7 @@
             // nudprecio
             // 
             this.nudprecio.DecimalPlaces = 2;
-            this.nudprecio.Location = new System.Drawing.Point(258, 444);
+            this.nudprecio.Location = new System.Drawing.Point(51, 444);
             this.nudprecio.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -146,7 +146,7 @@
             // nudstock
             // 
             this.nudstock.DecimalPlaces = 2;
-            this.nudstock.Location = new System.Drawing.Point(51, 444);
+            this.nudstock.Location = new System.Drawing.Point(272, 444);
             this.nudstock.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -224,7 +224,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmNuevoproducto";
