@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using pryCafeteriaEscolar.Base_de_datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +21,22 @@ namespace pryCafeteriaEscolar
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
+            try
+            {
+                DataAcces con = new DataAcces();
+                con.conexion();
+                MessageBox.Show("coneccion ecitosa");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
