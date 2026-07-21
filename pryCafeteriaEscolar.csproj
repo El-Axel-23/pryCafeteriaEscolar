@@ -111,13 +111,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base de datos\DataAcces.cs" />
-    <Compile Include="Configuracion\FrmConfig.cs">
+    <Compile Include="Config\FrmConfig.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Configuracion\FrmConfig.Designer.cs">
+    <Compile Include="Config\FrmConfig.Designer.cs">
       <DependentUpon>FrmConfig.cs</DependentUpon>
     </Compile>
-    <Compile Include="Configuracion\SaveConfig.cs" />
+    <Compile Include="Config\SaveConfig.cs" />
     <Compile Include="FrmEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +135,12 @@
     </Compile>
     <Compile Include="Productos\FrmNuevoproducto.Designer.cs">
       <DependentUpon>FrmNuevoproducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\FrmNuevoproveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\FrmNuevoproveedor.Designer.cs">
+      <DependentUpon>FrmNuevoproveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Productos\FrmProductos.cs">
       <SubType>Form</SubType>
@@ -174,7 +180,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Configuracion\FrmConfig.resx">
+    <EmbeddedResource Include="Config\FrmConfig.resx">
       <DependentUpon>FrmConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEmpleado.resx">
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\FrmNuevoproducto.resx">
       <DependentUpon>FrmNuevoproducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\FrmNuevoproveedor.resx">
+      <DependentUpon>FrmNuevoproveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\FrmProductos.resx">
       <DependentUpon>FrmProductos.cs</DependentUpon>
@@ -205,6 +214,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

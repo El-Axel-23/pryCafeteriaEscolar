@@ -162,7 +162,7 @@ namespace pryCafeteriaEscolar
                 Convert.ToInt32(dgvproductos.CurrentRow.Cells["stock"].Value)
             );
             frm.ShowDialog();
-            CargandoP();
+            CargandoProve();
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
@@ -188,6 +188,65 @@ namespace pryCafeteriaEscolar
                     }
                     MessageBox.Show("Producto eliminado correctamente");
                     CargandoP();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void buttonProve_Click(object sender, EventArgs e)
+        {
+            FrmNuevoproveedor frn = new FrmNuevoproveedor();
+
+            frn.ShowDialog();
+            CargandoP();
+        }
+
+        private void editarProve_Click(object sender, EventArgs e)
+        {
+            if(dataGridView2.CurrentRow.Cells == null)
+            {
+                MessageBox.Show("Seleccione un proveedor.");
+                return;
+            }
+            FrmNuevoproveedor frm = new FrmNuevoproveedor();
+            frm.proveedorEd = true;
+            frm.RFCOriginal = dataGridView2.CurrentRow.Cells["RFC"].Value.ToString();
+
+            frm.CargarDp(dataGridView2.CurrentRow.Cells["RFC"].Value.ToString(), dataGridView2.CurrentRow.Cells["nombre"].Value.ToString(), dataGridView2.CurrentRow.Cells["correo"].Value.ToString(),
+                dataGridView2.CurrentRow.Cells["telefono"].Value.ToString(), dataGridView2.CurrentRow.Cells["calle"].Value.ToString(), dataGridView2.CurrentRow.Cells["colonia"].Value.ToString(),
+                dataGridView2.CurrentRow.Cells["ciudad"].Value.ToString(), dataGridView2.CurrentRow.Cells["cp"].Value.ToString()
+            );
+            frm.ShowDialog();
+            CargandoProve();
+        }
+
+        private void ElimProve_Click(object sender, EventArgs e)
+        {
+            if(dataGridView2.CurrentRow.Cells == null)
+            {
+                MessageBox.Show("Seleccione un proveedor.");
+                return;
+            }
+            DialogResult result = MessageBox.Show("Desea eliminar este proveedor?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    DataAcces data = new DataAcces();
+                    using(MySqlConnection connection = data.Dataacces())
+                    {
+                        string Sql = "DELETE FROM Proveedor WHERE RFC=@rfc";
+                        MySqlCommand command = new MySqlCommand(Sql, connection);
+
+                        command.Parameters.AddWithValue("@rfc", dataGridView2.CurrentRow.Cells["RFC"].Value.ToString());
+                        command.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("Proveedor eliminado correctamente.");
+                    CargandoProve();
                 }
                 catch (Exception ex)
                 {

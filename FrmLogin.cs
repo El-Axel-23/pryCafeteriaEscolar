@@ -21,6 +21,8 @@ namespace pryCafeteriaEscolar
 
         private void btnLogin_Click(object sender, System.EventArgs e)
         {
+            
+           
             if (string.IsNullOrWhiteSpace(txtUser.Text) || string.IsNullOrWhiteSpace(txtPassw.Text))
             {
                 MessageBox.Show("Por favor, llene todos los campos (Usuario y Contraseña).", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
