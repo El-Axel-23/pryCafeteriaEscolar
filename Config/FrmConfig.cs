@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using pryCafeteriaEscolar.Base_de_datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,12 +21,43 @@ namespace pryCafeteriaEscolar.Configuracion
 
         private void FrmConfig_Load(object sender, EventArgs e)
         {
+            CargarDatosEmpresa();
+
             if (cmbbxFuente.SelectedIndex == -1)
             {
                 cmbbxFuente.SelectedIndex = 0;
             }
             CambiarTema();
         }
+
+        private void CargarDatosEmpresa()
+        {
+            try
+            {
+                DataAcces data = new DataAcces();
+                MySqlConnection connection = data.Dataacces();
+
+                string Sql = @"SELECT nombreCafe, direccionCafe, telefonoCafe, correoCafe FROM Empresa LIMIT 1";
+
+                MySqlCommand cmd = new MySqlCommand(Sql, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    txtNombre.Text = reader["nombreCafe"].ToString();
+                    txtDireccion.Text = reader["direccionCafe"].ToString();
+                    txtTelefono.Text = reader["telefonoCafe"].ToString();
+                    txtCorreo.Text = reader["correoCafe"].ToString();
+                }
+
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar la información de la empresa: " + ex.Message);
+            }
+        }
+
         private void CambiarColorControles(Control padre, Color fondo, Color texto)
         {
             foreach (Control c in padre.Controls)
@@ -38,6 +71,7 @@ namespace pryCafeteriaEscolar.Configuracion
                 }
             }
         }
+
         private void CambiarTema()
         {
             if (trackTemas.Value == 0)
@@ -51,10 +85,12 @@ namespace pryCafeteriaEscolar.Configuracion
                 CambiarColorControles(this, Color.FromArgb(45, 45, 48), Color.White);
             }
         }
+
         private void trackTemas_Scroll(object sender, EventArgs e)
         {
             CambiarTema();
         }
+
         private void cmbbxFuente_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -76,6 +112,7 @@ namespace pryCafeteriaEscolar.Configuracion
                 }
             }
         }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (trackTemas.Value == 0)
@@ -97,5 +134,9 @@ namespace pryCafeteriaEscolar.Configuracion
             ConfigGlobal.ActualizarVentanasAbiertas();
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            txtHoraSistema.Text = DateTime.Now.ToString("hh:mm:ss tt");
+        }
     }
 }
