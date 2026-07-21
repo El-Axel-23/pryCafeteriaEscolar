@@ -1,3 +1,5 @@
+﻿using pryCafeteriaEscolar.Configuracion;
+using System;
 ﻿using System;
 using pryCafeteriaEscolar.Configuracion;
 using System.Collections.Generic;
@@ -22,6 +24,8 @@ namespace pryCafeteriaEscolar
 
         private void CargarVistaEnPanel(UserControl nuevaVista)
         {
+            // Si quieres que abra Configuración al iniciar, descomenta:
+            // btnConfiguracion_Click(sender, e);
             // 1. Limpiamos cualquier control que esté visible actualmente en Panel2
             splitContainer1.Panel2.Controls.Clear();
 
@@ -34,11 +38,22 @@ namespace pryCafeteriaEscolar
 
         private void FrmEmpleado_Load(object sender, EventArgs e)
         {
+            splitContainer1.Panel2.Controls.Clear();
+
+            FrmConfig configuracion = new FrmConfig();
+
+            configuracion.TopLevel = false;
+            configuracion.FormBorderStyle = FormBorderStyle.None;
+            configuracion.Dock = DockStyle.Fill;
+
+            splitContainer1.Panel2.Controls.Add(configuracion);
+            configuracion.Show();
 
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
+
             // 1. Limpiamos el Panel2 (donde se muestra la vista)
             splitContainer1.Panel2.Controls.Clear();
 
@@ -57,6 +72,13 @@ namespace pryCafeteriaEscolar
 
         private void button2_Click(object sender, EventArgs e)
         {
+            splitContainer1.Panel2.Controls.Clear();
+
+            nuevaVista.Dock = DockStyle.Fill;
+
+            splitContainer1.Panel2.Controls.Add(nuevaVista);
+
+            nuevaVista.BringToFront();
             // Pasamos una instancia del UserControl correspondiente
             CargarVistaEnPanel(new Ventas());
         }
