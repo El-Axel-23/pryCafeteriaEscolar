@@ -51,6 +51,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtTotalVenta = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -191,6 +192,7 @@
             // lblCodgProduc
             // 
             this.lblCodgProduc.AutoSize = true;
+            this.lblCodgProduc.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblCodgProduc.Location = new System.Drawing.Point(10, 65);
             this.lblCodgProduc.Name = "lblCodgProduc";
             this.lblCodgProduc.Size = new System.Drawing.Size(110, 16);
@@ -284,7 +286,7 @@
             this.groupBox5.Size = new System.Drawing.Size(250, 47);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "          Venta actual";
+            this.groupBox5.Text = "         Venta actual";
             // 
             // label1
             // 
@@ -296,6 +298,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Cafetería Escolar";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(77, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(185, 36);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Cafeteria Escolar";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -304,6 +318,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.listBxListaProduc);
             this.Controls.Add(this.groupBox1);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "Ventas";
             this.Size = new System.Drawing.Size(813, 422);
             this.groupBox1.ResumeLayout(false);
