@@ -57,6 +57,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnInicio = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackTemas)).BeginInit();
@@ -65,7 +66,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(510, 406);
+            this.button2.Location = new System.Drawing.Point(578, 359);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(96, 42);
             this.button2.TabIndex = 22;
@@ -74,9 +75,9 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(521, 333);
+            this.btnGuardar.Location = new System.Drawing.Point(578, 284);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(96, 44);
             this.btnGuardar.TabIndex = 21;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -86,7 +87,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 9);
+            this.label1.Location = new System.Drawing.Point(95, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(158, 20);
             this.label1.TabIndex = 20;
@@ -102,7 +103,7 @@
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Location = new System.Drawing.Point(395, 45);
+            this.groupBox2.Location = new System.Drawing.Point(463, 45);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(419, 186);
             this.groupBox2.TabIndex = 18;
@@ -176,7 +177,7 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Location = new System.Drawing.Point(27, 284);
+            this.groupBox3.Location = new System.Drawing.Point(95, 284);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(300, 186);
             this.groupBox3.TabIndex = 19;
@@ -266,7 +267,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(27, 45);
+            this.groupBox1.Location = new System.Drawing.Point(95, 45);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(300, 186);
             this.groupBox1.TabIndex = 17;
@@ -346,11 +347,21 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Informacion de la cafeteria";
             // 
+            // btnInicio
+            // 
+            this.btnInicio.Location = new System.Drawing.Point(578, 430);
+            this.btnInicio.Name = "btnInicio";
+            this.btnInicio.Size = new System.Drawing.Size(96, 40);
+            this.btnInicio.TabIndex = 23;
+            this.btnInicio.Text = "Inicio";
+            this.btnInicio.UseVisualStyleBackColor = true;
+            // 
             // FrmConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 497);
+            this.Controls.Add(this.btnInicio);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label1);
@@ -403,5 +414,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnInicio;
     }
 }

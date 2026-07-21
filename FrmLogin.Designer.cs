@@ -57,7 +57,7 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Size = new System.Drawing.Size(491, 274);
- master
+            
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -70,7 +70,6 @@
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(250, 274);
- master
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -101,7 +100,6 @@
             this.textBox1.Size = new System.Drawing.Size(76, 20);
             this.textBox1.TabIndex = 2;
             // 
-master
             // label2
             // 
             this.label2.AutoSize = true;
@@ -114,7 +112,6 @@ master
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 18);
-master
             this.label2.TabIndex = 1;
             this.label2.Text = "Contraseña:";
             // 
@@ -130,7 +127,6 @@ master
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 18);
- master
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario:";
             // 
@@ -178,7 +174,7 @@ master
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.Color.IndianRed;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D; master
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FrmLogin";
             this.Text = "FrmLogin";
             this.TransparencyKey = System.Drawing.Color.Silver;
