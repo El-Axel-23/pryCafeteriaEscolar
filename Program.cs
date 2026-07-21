@@ -16,8 +16,8 @@ namespace pryCafeteriaEscolar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmEntradas());
-          
+            Application.Run(new FrmLogin());
+       
         }
     }
 }
