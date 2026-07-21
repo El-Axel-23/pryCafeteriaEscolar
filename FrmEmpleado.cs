@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pryCafeteriaEscolar.Configuracion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,32 +22,38 @@ namespace pryCafeteriaEscolar
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            configuracion configuracion = new configuracion();
-
-            configuracion.Dock = DockStyle.Fill;
-
-            this.Controls.Add(configuracion);
+            // Si quieres que abra Configuración al iniciar, descomenta:
+            // btnConfiguracion_Click(sender, e);
         }
 
         private void btnConfiguracion_Click(object sender, EventArgs e)
         {
-            splitContainer1.Panel1.Controls.Clear();
+            splitContainer1.Panel2.Controls.Clear();
 
-            configuracion config = new configuracion();
-            config.Dock = DockStyle.Fill;
+            FrmConfig configuracion = new FrmConfig();
 
-            splitContainer1.Panel2.Controls.Add(config);
+            configuracion.TopLevel = false;
+            configuracion.FormBorderStyle = FormBorderStyle.None;
+            configuracion.Dock = DockStyle.Fill;
+
+            splitContainer1.Panel2.Controls.Add(configuracion);
+            configuracion.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-        
+
         }
 
         private void CargarVistaEnPanel(UserControl nuevaVista)
         {
-            //1. Limpiamos cualquier control que esté visible actualmente en Panel2
-        }
+            splitContainer1.Panel2.Controls.Clear();
 
+            nuevaVista.Dock = DockStyle.Fill;
+
+            splitContainer1.Panel2.Controls.Add(nuevaVista);
+
+            nuevaVista.BringToFront();
+        }
     }
 }
