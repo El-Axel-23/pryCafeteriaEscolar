@@ -98,6 +98,7 @@
             this.ElimProve.TabIndex = 9;
             this.ElimProve.Text = "Eliminar";
             this.ElimProve.UseVisualStyleBackColor = false;
+            this.ElimProve.Click += new System.EventHandler(this.ElimProve_Click);
             // 
             // editarProve
             // 
@@ -110,6 +111,7 @@
             this.editarProve.TabIndex = 8;
             this.editarProve.Text = "Editar";
             this.editarProve.UseVisualStyleBackColor = false;
+            this.editarProve.Click += new System.EventHandler(this.editarProve_Click);
             // 
             // buttonProve
             // 
@@ -123,6 +125,7 @@
             this.buttonProve.TabIndex = 7;
             this.buttonProve.Text = "+ Nuevo proveedor";
             this.buttonProve.UseVisualStyleBackColor = false;
+            this.buttonProve.Click += new System.EventHandler(this.buttonProve_Click);
             // 
             // buttonEliminar
             // 
