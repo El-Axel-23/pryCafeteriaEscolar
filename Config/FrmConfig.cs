@@ -89,8 +89,7 @@ namespace pryCafeteriaEscolar.Configuracion
                 ConfigGlobal.ColorTexto = Color.White;
             }
 
-            if (cmbbxFuente.SelectedItem != null &&
-                float.TryParse(cmbbxFuente.SelectedItem.ToString(), out float nuevoTamanio))
+            if (cmbbxFuente.SelectedItem != null && float.TryParse(cmbbxFuente.SelectedItem.ToString(), out float nuevoTamanio))
             {
                 ConfigGlobal.TamanioFuente = nuevoTamanio;
             }

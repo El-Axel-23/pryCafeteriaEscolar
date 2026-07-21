@@ -66,12 +66,6 @@
     <Reference Include="MySqlConnector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
       <HintPath>packages\MySqlConnector.2.6.1\lib\net471\MySqlConnector.dll</HintPath>
     </Reference>
-<<<<<<< HEAD
-    <Reference Include="MySql.Data, Version=9.7.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>packages\MySql.Data.9.7.0\lib\net462\MySql.Data.dll</HintPath>
-    </Reference>
-=======
->>>>>>> a1d023372d114e57df86904a9f8eca10a8136fb1
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
@@ -116,7 +110,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="Base de datos\DataAcces.cs" />
     <Compile Include="Config\FrmConfig.cs">
       <SubType>Form</SubType>
@@ -125,28 +118,12 @@
       <DependentUpon>FrmConfig.cs</DependentUpon>
     </Compile>
     <Compile Include="Config\SaveConfig.cs" />
-=======
-    <Compile Include="Base de datos\DataAcces.cs" />
-    <Compile Include="Frmconfiguracion.cs" />
-    <Compile Include="Frmconfiguracion.Designer.cs">
-      <DependentUpon>Frmconfiguracion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frmconfiguracion1.Designer.cs" />
     <Compile Include="FrmEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmEmpleado.Designer.cs">
       <DependentUpon>FrmEmpleado.cs</DependentUpon>
-    <Compile Include="FrmConfiguracion.cs">
-      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FrmConfiguracion.Designer.cs">
-      <DependentUpon>FrmConfiguracion.cs</DependentUpon>
-    </Compile>
-=======
-    <Compile Include="Base de datos\DataAcces.cs" />
- fb68aaf4acb98bdd1d1191b9c4bec0d359b54b82
->>>>>>> a1d023372d114e57df86904a9f8eca10a8136fb1
     <Compile Include="FrmEntradas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,27 +142,6 @@
     <Compile Include="Productos\FrmProductos.Designer.cs">
       <DependentUpon>FrmProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
-    <EmbeddedResource Include="Config\FrmConfig.resx">
-      <DependentUpon>FrmConfig.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="Frmconfiguracion.resx">
-      <DependentUpon>Frmconfiguracion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmEmpleado.resx">
-      <DependentUpon>FrmEmpleado.cs</DependentUpon>
->>>>>>> a1d023372d114e57df86904a9f8eca10a8136fb1
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmEntradas.resx">
-      <DependentUpon>FrmEntradas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Productos\FrmNuevoproducto.resx">
-      <DependentUpon>FrmNuevoproducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Productos\FrmProductos.resx">
-      <DependentUpon>FrmProductos.cs</DependentUpon>
-    </EmbeddedResource>
     <Compile Include="FrmAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,10 +155,16 @@
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Ventas.cs">
       <SubType>UserControl</SubType>
@@ -210,13 +172,23 @@
     <Compile Include="Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
-    <EmbeddedResource Include="FrmConfiguracion.resx">
-      <DependentUpon>FrmConfiguracion.cs</DependentUpon>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Config\FrmConfig.resx">
+      <DependentUpon>FrmConfig.cs</DependentUpon>
     </EmbeddedResource>
-master
->>>>>>> a1d023372d114e57df86904a9f8eca10a8136fb1
+    <EmbeddedResource Include="FrmEmpleado.resx">
+      <DependentUpon>FrmEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEntradas.resx">
+      <DependentUpon>FrmEntradas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\FrmNuevoproducto.resx">
+      <DependentUpon>FrmNuevoproducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\FrmProductos.resx">
+      <DependentUpon>FrmProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAdministrador.resx">
       <DependentUpon>FrmAdministrador.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,19 +203,14 @@ master
     <EmbeddedResource Include="Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
