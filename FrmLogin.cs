@@ -17,6 +17,9 @@ namespace pryCafeteriaEscolar
         {
             if (string.IsNullOrWhiteSpace(txtUser.Text) ||
                 string.IsNullOrWhiteSpace(txtPassw.Text))
+            
+           
+            if (string.IsNullOrWhiteSpace(txtUser.Text) || string.IsNullOrWhiteSpace(txtPassw.Text))
             {
                 MessageBox.Show(
                     "Por favor, llene todos los campos.",
@@ -32,6 +35,7 @@ namespace pryCafeteriaEscolar
             DataAcces conBD = new DataAcces();
 
             try
+            using (MySqlConnection conexion = conBD.Dataacces())
             {
                 using (MySqlConnection conexion = conBD.Dataacces())
                 {
@@ -151,6 +155,11 @@ namespace pryCafeteriaEscolar
                     MessageBoxIcon.Error
                 );
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
