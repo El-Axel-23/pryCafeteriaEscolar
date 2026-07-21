@@ -33,7 +33,7 @@ namespace pryCafeteriaEscolar
 
             DataAcces conBD = new DataAcces();
 
-            using (MySqlConnection conexion = conBD.conexion())
+            using (MySqlConnection conexion = conBD.Dataacces())
             {
                 if (conexion != null)
                 {
@@ -91,6 +91,11 @@ namespace pryCafeteriaEscolar
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

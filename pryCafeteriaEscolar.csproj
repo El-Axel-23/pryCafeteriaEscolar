@@ -111,23 +111,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base de datos\DataAcces.cs" />
-    <Compile Include="Frmconfiguracion.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Configuracion\FrmConfig.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frmconfiguracion.Designer.cs">
-      <DependentUpon>Frmconfiguracion.cs</DependentUpon>
+    <Compile Include="Configuracion\FrmConfig.Designer.cs">
+      <DependentUpon>FrmConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Configuracion\SaveConfig.cs" />
     <Compile Include="FrmEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmEmpleado.Designer.cs">
       <DependentUpon>FrmEmpleado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmConfiguracion.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="FrmConfiguracion.Designer.cs">
-      <DependentUpon>FrmConfiguracion.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmEntradas.cs">
       <SubType>Form</SubType>
@@ -179,8 +174,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Frmconfiguracion.resx">
-      <DependentUpon>Frmconfiguracion.cs</DependentUpon>
+    <EmbeddedResource Include="Configuracion\FrmConfig.resx">
+      <DependentUpon>FrmConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEmpleado.resx">
       <DependentUpon>FrmEmpleado.cs</DependentUpon>
@@ -193,9 +188,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\FrmProductos.resx">
       <DependentUpon>FrmProductos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmConfiguracion.resx">
-      <DependentUpon>FrmConfiguracion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdministrador.resx">
       <DependentUpon>FrmAdministrador.cs</DependentUpon>
