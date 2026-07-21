@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEntradas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,12 +49,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbcontadorproveedores = new System.Windows.Forms.Label();
             this.dtgTabla = new System.Windows.Forms.DataGridView();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btnEntradas = new System.Windows.Forms.Button();
             this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnEntradas = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -262,6 +262,9 @@
             this.dtgTabla.AllowUserToDeleteRows = false;
             this.dtgTabla.AllowUserToResizeColumns = false;
             this.dtgTabla.AllowUserToResizeRows = false;
+            this.dtgTabla.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgTabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgTabla.BackgroundColor = System.Drawing.Color.White;
             this.dtgTabla.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -287,6 +290,41 @@
             this.dtgTabla.TabIndex = 12;
             this.dtgTabla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgTabla_CellContentClick);
             // 
+            // colProducto
+            // 
+            this.colProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colProducto.HeaderText = "Producto";
+            this.colProducto.MinimumWidth = 180;
+            this.colProducto.Name = "colProducto";
+            this.colProducto.ReadOnly = true;
+            // 
+            // colCantidad
+            // 
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colCantidad.DefaultCellStyle = dataGridViewCellStyle19;
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.MinimumWidth = 8;
+            this.colCantidad.Name = "colCantidad";
+            this.colCantidad.ReadOnly = true;
+            // 
+            // colProveedor
+            // 
+            this.colProveedor.HeaderText = "Proveedor";
+            this.colProveedor.MinimumWidth = 8;
+            this.colProveedor.Name = "colProveedor";
+            this.colProveedor.ReadOnly = true;
+            // 
+            // colFecha
+            // 
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.Format = "f";
+            dataGridViewCellStyle20.NullValue = null;
+            this.colFecha.DefaultCellStyle = dataGridViewCellStyle20;
+            this.colFecha.HeaderText = "Fecha";
+            this.colFecha.MinimumWidth = 8;
+            this.colFecha.Name = "colFecha";
+            this.colFecha.ReadOnly = true;
+            // 
             // txtBuscar
             // 
             this.txtBuscar.BackColor = System.Drawing.Color.White;
@@ -298,6 +336,8 @@
             this.txtBuscar.TabIndex = 13;
             this.txtBuscar.Text = "Buscar producto";
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
+            this.txtBuscar.Leave += new System.EventHandler(this.txtBuscar_Leave);
             // 
             // btnEntradas
             // 
@@ -314,45 +354,9 @@
             this.btnEntradas.UseVisualStyleBackColor = false;
             this.btnEntradas.Click += new System.EventHandler(this.btnEntradas_Click);
             // 
-            // colProducto
-            // 
-            this.colProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colProducto.HeaderText = "Producto";
-            this.colProducto.MinimumWidth = 180;
-            this.colProducto.Name = "colProducto";
-            this.colProducto.ReadOnly = true;
-            // 
-            // colCantidad
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colCantidad.DefaultCellStyle = dataGridViewCellStyle7;
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.MinimumWidth = 8;
-            this.colCantidad.Name = "colCantidad";
-            this.colCantidad.ReadOnly = true;
-            // 
-            // colProveedor
-            // 
-            this.colProveedor.HeaderText = "Proveedor";
-            this.colProveedor.MinimumWidth = 8;
-            this.colProveedor.Name = "colProveedor";
-            this.colProveedor.ReadOnly = true;
-            // 
-            // colFecha
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.Format = "f";
-            dataGridViewCellStyle8.NullValue = null;
-            this.colFecha.DefaultCellStyle = dataGridViewCellStyle8;
-            this.colFecha.HeaderText = "Fecha";
-            this.colFecha.MinimumWidth = 8;
-            this.colFecha.Name = "colFecha";
-            this.colFecha.ReadOnly = true;
-            // 
             // FrmEntradas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1056, 596);
             this.Controls.Add(this.btnEntradas);
@@ -364,8 +368,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.DimGray;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmEntradas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEntradas";
+            this.Load += new System.EventHandler(this.FrmEntradas_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

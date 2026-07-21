@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using MySql.Data.MySqlClient;
+using pryCafeteriaEscolar.Base_de_datos;
+using System;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace pryCafeteriaEscolar
@@ -16,91 +12,191 @@ namespace pryCafeteriaEscolar
         public FrmEntradas()
         {
             InitializeComponent();
+
+            txtBuscar.Text = "Buscar producto";
+            txtBuscar.ForeColor = Color.Gray;
+        }
+
+        private void FrmEntradas_Load(object sender, EventArgs e)
+        {
+            txtBuscar.Text = "Buscar producto";
+            txtBuscar.ForeColor = Color.Gray;
+
+            CargarEntradas();
+            ActualizarContadores();
+        }
+
+        // =====================================================
+        // CARGAR DATOS EN LA TABLA
+        // =====================================================
+        private void CargarEntradas(string busqueda = "")
+        {
+            try
+            {
+                DataAcces acceso = new DataAcces();
+
+                using (MySqlConnection conexion = acceso.conexion())
+                {
+                    string consulta = @"
+                        SELECT
+                            p.descripcion AS Producto,
+                            dc.cantidad AS Cantidad,
+                            pr.nombre AS Proveedor,
+                            DATE_FORMAT(c.fecha, '%d/%m/%Y %H:%i') AS Fecha
+                        FROM Detalle_compra dc
+                        INNER JOIN Compra c
+                            ON dc.id_compra = c.id_compra
+                        INNER JOIN Producto p
+                            ON dc.codigo_barra = p.codigo_barra
+                        INNER JOIN Proveedor pr
+                            ON c.RFC = pr.RFC
+                        WHERE p.descripcion LIKE @buscar
+                           OR p.codigo_barra LIKE @buscar
+                           OR pr.nombre LIKE @buscar
+                        ORDER BY c.fecha DESC;";
+
+                    MySqlCommand comando = new MySqlCommand(consulta, conexion);
+
+                    comando.Parameters.AddWithValue( "@buscar", "%" + busqueda + "%");
+
+                    MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
+
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+
+                    // Evita que aparezcan columnas repetidas
+                    dtgTabla.AutoGenerateColumns = false;
+
+                    // Relaciona las columnas del diseñador
+                    // con los resultados de la consulta
+                    colProducto.DataPropertyName = "Producto";
+                    colCantidad.DataPropertyName = "Cantidad";
+                    colProveedor.DataPropertyName = "Proveedor";
+                    colFecha.DataPropertyName = "Fecha";
+
+                    dtgTabla.DataSource = tabla;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show( "No se pudieron cargar las entradas.\n\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error
+                );
+            }
+        }
+
+        // =====================================================
+        // BUSCAR PRODUCTO
+        // =====================================================
+        private void txtBuscar_Enter(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "Buscar producto")
+            {
+                txtBuscar.Clear();
+                txtBuscar.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtBuscar_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
+            {
+                txtBuscar.Text = "Buscar producto";
+                txtBuscar.ForeColor = Color.Gray;
+            }
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            try
+            if (txtBuscar.Text == "Buscar producto")
             {
-              /*/
-                Conexion conexion = new Conexion();
-
-                using (MySqlConnection cn = conexion.ObtenerConexion())
-                {
-                    string sql = @"SELECT producto_id, codigo, descripcion, precio, stock  FROM productos WHERE codigo LIKE @buscar OR descripcion LIKE @buscar";
-
-                    MySqlDataAdapter da = new MySqlDataAdapter(sql, cn);
-                    da.SelectCommand.Parameters.AddWithValue("@buscar", "%" + txtBusqueda.Text.Trim() + "%");
-
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    dgvProductos.DataSource = dt;
-                
-                /*/
+                CargarEntradas();
             }
-            catch(Exception ex)
+            else
             {
-                MessageBox.Show("Error al buscar: " + ex.Message);
+                CargarEntradas(txtBuscar.Text.Trim());
             }
         }
 
-        private void btnEntradas_Click(object sender, EventArgs e)
+        // =====================================================
+        // ACTUALIZAR CONTADORES
+        // =====================================================
+        private void ActualizarContadores()
         {
-            /*/
-             string codigo = txtCodigo.Text.Trim();
-            string descripcion = txtNombre.Text.Trim();
-
-            if (codigo == "" || descripcion == "")
-            {
-                MessageBox.Show("Código y descripción son obligatorios.");
-                return;
-            }
-
-            if (!decimal.TryParse(txtPrecio.Text, out decimal precio))
-            {
-                MessageBox.Show("El precio debe ser numérico.");
-                return;
-            }
-
-            if (!int.TryParse(txtStock.Text, out int stock))
-            {
-                MessageBox.Show("El stock debe ser numérico.");
-                return;
-            }
-
             try
             {
-                Conexion conexion = new Conexion();
+                DataAcces acceso = new DataAcces();
 
-                using (MySqlConnection cn = conexion.ObtenerConexion())
+                using (MySqlConnection conexion = acceso.conexion())
                 {
-                    string sql = @"INSERT INTO productos  (codigo, descripcion, precio, stock) VALUES (@codigo, @descripcion, @precio, @stock)";
+                    // Productos diferentes registrados
+                    string consultaProductos = @"
+                        SELECT COUNT(DISTINCT codigo_barra)
+                        FROM Detalle_compra;";
 
-                    using (MySqlCommand cmd = new MySqlCommand(sql, cn))
-                    {
-                        cmd.Parameters.AddWithValue("@codigo", codigo);
-                        cmd.Parameters.AddWithValue("@descripcion", descripcion);
-                        cmd.Parameters.AddWithValue("@precio", precio);
-                        cmd.Parameters.AddWithValue("@stock", stock);
+                    MySqlCommand comandoProductos =
+                        new MySqlCommand(
+                            consultaProductos,
+                            conexion
+                        );
 
-                        cmd.ExecuteNonQuery();
-                    }
+                    lbcontadorP.Text =
+                        comandoProductos.ExecuteScalar().ToString();
+
+                    // Total de entradas registradas
+                    string consultaEntradas = @"
+                        SELECT COUNT(*)
+                        FROM Compra;";
+
+                    MySqlCommand comandoEntradas =
+                        new MySqlCommand(
+                            consultaEntradas,
+                            conexion
+                        );
+
+                    lbcontadorE.Text =
+                        comandoEntradas.ExecuteScalar().ToString();
+
+                    // Total de proveedores
+                    string consultaProveedores = @"
+                        SELECT COUNT(*)
+                        FROM Proveedor;";
+
+                    MySqlCommand comandoProveedores =
+                        new MySqlCommand(
+                            consultaProveedores,
+                            conexion
+                        );
+
+                    lbcontadorproveedores.Text =
+                        comandoProveedores.ExecuteScalar().ToString();
                 }
-
-                MessageBox.Show("Producto guardado correctamente.");
-                CargarProductos();
-                LimpiarCampos();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar: " + ex.Message);
-            }/*/
+                MessageBox.Show(
+                    "No se pudieron actualizar los contadores.\n\n" +
+                    ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
         }
 
-        private void dtgTabla_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        // Se deja porque está conectado desde el Designer
+        private void dtgTabla_CellContentClick(
+            object sender,
+            DataGridViewCellEventArgs e)
         {
-            
         }
+
+        // Se deja vacío hasta programar Nueva entrada
+        private void btnEntradas_Click(
+            object sender,
+            EventArgs e)
+        {
+        }
+
+      
     }
 }
