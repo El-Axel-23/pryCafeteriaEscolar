@@ -32,8 +32,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btncancelarp = new System.Windows.Forms.Button();
             this.btnguardarp = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtcpP = new System.Windows.Forms.Label();
+            this.txtcpP = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.txtciudadp = new System.Windows.Forms.TextBox();
             this.lblci = new System.Windows.Forms.Label();
             this.txtcoloniap = new System.Windows.Forms.TextBox();
@@ -56,18 +56,19 @@
             this.Lbltitulo.AutoSize = true;
             this.Lbltitulo.Font = new System.Drawing.Font("Segoe UI Variable Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbltitulo.ForeColor = System.Drawing.Color.SteelBlue;
-            this.Lbltitulo.Location = new System.Drawing.Point(40, 25);
+            this.Lbltitulo.Location = new System.Drawing.Point(40, 9);
             this.Lbltitulo.Name = "Lbltitulo";
             this.Lbltitulo.Size = new System.Drawing.Size(367, 48);
             this.Lbltitulo.TabIndex = 0;
             this.Lbltitulo.Text = "NUEVO PROVEEDOR";
+            this.Lbltitulo.Click += new System.EventHandler(this.Lbltitulo_Click);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btncancelarp);
             this.panel1.Controls.Add(this.btnguardarp);
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.txtcpP);
+            this.panel1.Controls.Add(this.label23);
             this.panel1.Controls.Add(this.txtciudadp);
             this.panel1.Controls.Add(this.lblci);
             this.panel1.Controls.Add(this.txtcoloniap);
@@ -87,7 +88,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(20);
-            this.panel1.Size = new System.Drawing.Size(951, 762);
+            this.panel1.Size = new System.Drawing.Size(711, 681);
             this.panel1.TabIndex = 1;
             // 
             // btncancelarp
@@ -96,7 +97,7 @@
             this.btncancelarp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancelarp.Font = new System.Drawing.Font("Segoe UI Variable Text", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancelarp.ForeColor = System.Drawing.Color.White;
-            this.btncancelarp.Location = new System.Drawing.Point(506, 662);
+            this.btncancelarp.Location = new System.Drawing.Point(415, 591);
             this.btncancelarp.Name = "btncancelarp";
             this.btncancelarp.Size = new System.Drawing.Size(140, 45);
             this.btncancelarp.TabIndex = 18;
@@ -110,7 +111,7 @@
             this.btnguardarp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnguardarp.Font = new System.Drawing.Font("Segoe UI Variable Text", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnguardarp.ForeColor = System.Drawing.Color.White;
-            this.btnguardarp.Location = new System.Drawing.Point(267, 662);
+            this.btnguardarp.Location = new System.Drawing.Point(208, 591);
             this.btnguardarp.Name = "btnguardarp";
             this.btnguardarp.Size = new System.Drawing.Size(140, 45);
             this.btnguardarp.TabIndex = 17;
@@ -118,26 +119,26 @@
             this.btnguardarp.UseVisualStyleBackColor = false;
             this.btnguardarp.Click += new System.EventHandler(this.btnguardarp_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(48, 592);
-            this.textBox1.MaxLength = 5;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 34);
-            this.textBox1.TabIndex = 16;
-            // 
             // txtcpP
             // 
-            this.txtcpP.AutoSize = true;
-            this.txtcpP.Location = new System.Drawing.Point(48, 561);
+            this.txtcpP.Location = new System.Drawing.Point(48, 540);
+            this.txtcpP.MaxLength = 5;
             this.txtcpP.Name = "txtcpP";
-            this.txtcpP.Size = new System.Drawing.Size(140, 28);
-            this.txtcpP.TabIndex = 15;
-            this.txtcpP.Text = "Codigo postal:";
+            this.txtcpP.Size = new System.Drawing.Size(120, 34);
+            this.txtcpP.TabIndex = 16;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(43, 509);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(140, 28);
+            this.label23.TabIndex = 15;
+            this.label23.Text = "Codigo postal:";
             // 
             // txtciudadp
             // 
-            this.txtciudadp.Location = new System.Drawing.Point(426, 503);
+            this.txtciudadp.Location = new System.Drawing.Point(374, 472);
             this.txtciudadp.MaxLength = 100;
             this.txtciudadp.Name = "txtciudadp";
             this.txtciudadp.Size = new System.Drawing.Size(220, 34);
@@ -146,7 +147,7 @@
             // lblci
             // 
             this.lblci.AutoSize = true;
-            this.lblci.Location = new System.Drawing.Point(421, 472);
+            this.lblci.Location = new System.Drawing.Point(369, 433);
             this.lblci.Name = "lblci";
             this.lblci.Size = new System.Drawing.Size(78, 28);
             this.lblci.TabIndex = 13;
@@ -154,7 +155,7 @@
             // 
             // txtcoloniap
             // 
-            this.txtcoloniap.Location = new System.Drawing.Point(48, 503);
+            this.txtcoloniap.Location = new System.Drawing.Point(48, 472);
             this.txtcoloniap.MaxLength = 100;
             this.txtcoloniap.Name = "txtcoloniap";
             this.txtcoloniap.Size = new System.Drawing.Size(250, 34);
@@ -163,7 +164,7 @@
             // lblc
             // 
             this.lblc.AutoSize = true;
-            this.lblc.Location = new System.Drawing.Point(48, 472);
+            this.lblc.Location = new System.Drawing.Point(48, 433);
             this.lblc.Name = "lblc";
             this.lblc.Size = new System.Drawing.Size(83, 28);
             this.lblc.TabIndex = 11;
@@ -171,7 +172,7 @@
             // 
             // txtcallep
             // 
-            this.txtcallep.Location = new System.Drawing.Point(48, 423);
+            this.txtcallep.Location = new System.Drawing.Point(48, 387);
             this.txtcallep.MaxLength = 100;
             this.txtcallep.Name = "txtcallep";
             this.txtcallep.Size = new System.Drawing.Size(420, 34);
@@ -180,7 +181,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(48, 392);
+            this.label3.Location = new System.Drawing.Point(48, 356);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 28);
             this.label3.TabIndex = 9;
@@ -188,8 +189,8 @@
             // 
             // txttelefonop
             // 
-            this.txttelefonop.Location = new System.Drawing.Point(48, 346);
-            this.txttelefonop.Mask = "0000000000";
+            this.txttelefonop.Location = new System.Drawing.Point(48, 319);
+            this.txttelefonop.Mask = "000-000-0000";
             this.txttelefonop.Name = "txttelefonop";
             this.txttelefonop.Size = new System.Drawing.Size(180, 34);
             this.txttelefonop.TabIndex = 8;
@@ -197,7 +198,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(48, 315);
+            this.label2.Location = new System.Drawing.Point(48, 288);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 28);
             this.label2.TabIndex = 7;
@@ -205,7 +206,7 @@
             // 
             // txtcorreop
             // 
-            this.txtcorreop.Location = new System.Drawing.Point(48, 278);
+            this.txtcorreop.Location = new System.Drawing.Point(48, 251);
             this.txtcorreop.MaxLength = 100;
             this.txtcorreop.Name = "txtcorreop";
             this.txtcorreop.Size = new System.Drawing.Size(420, 34);
@@ -214,7 +215,7 @@
             // lblp
             // 
             this.lblp.AutoSize = true;
-            this.lblp.Location = new System.Drawing.Point(48, 247);
+            this.lblp.Location = new System.Drawing.Point(48, 220);
             this.lblp.Name = "lblp";
             this.lblp.Size = new System.Drawing.Size(76, 28);
             this.lblp.TabIndex = 5;
@@ -222,7 +223,7 @@
             // 
             // txtnombrep
             // 
-            this.txtnombrep.Location = new System.Drawing.Point(48, 210);
+            this.txtnombrep.Location = new System.Drawing.Point(48, 183);
             this.txtnombrep.MaxLength = 100;
             this.txtnombrep.Name = "txtnombrep";
             this.txtnombrep.Size = new System.Drawing.Size(420, 34);
@@ -231,7 +232,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 179);
+            this.label1.Location = new System.Drawing.Point(48, 152);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 28);
             this.label1.TabIndex = 3;
@@ -239,7 +240,7 @@
             // 
             // txtrfc
             // 
-            this.txtrfc.Location = new System.Drawing.Point(48, 129);
+            this.txtrfc.Location = new System.Drawing.Point(48, 103);
             this.txtrfc.MaxLength = 13;
             this.txtrfc.Name = "txtrfc";
             this.txtrfc.Size = new System.Drawing.Size(300, 34);
@@ -248,7 +249,7 @@
             // rfc
             // 
             this.rfc.AutoSize = true;
-            this.rfc.Location = new System.Drawing.Point(48, 98);
+            this.rfc.Location = new System.Drawing.Point(48, 72);
             this.rfc.Name = "rfc";
             this.rfc.Size = new System.Drawing.Size(50, 28);
             this.rfc.TabIndex = 1;
@@ -259,7 +260,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(951, 762);
+            this.ClientSize = new System.Drawing.Size(711, 681);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -295,8 +296,8 @@
         private System.Windows.Forms.TextBox txtcallep;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnguardarp;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label txtcpP;
+        private System.Windows.Forms.TextBox txtcpP;
+        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button btncancelarp;
     }
 }

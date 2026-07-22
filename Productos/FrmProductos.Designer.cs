@@ -70,17 +70,19 @@
             this.pnlprincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlprincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlprincipal.Name = "pnlprincipal";
-            this.pnlprincipal.Size = new System.Drawing.Size(1235, 712);
+            this.pnlprincipal.Padding = new System.Windows.Forms.Padding(10);
+            this.pnlprincipal.Size = new System.Drawing.Size(1121, 644);
             this.pnlprincipal.TabIndex = 2;
             this.pnlprincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(119)))), ((int)(((byte)(36)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Variable Text", 5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(327, 373);
+            this.button1.Location = new System.Drawing.Point(270, 381);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 35);
             this.button1.TabIndex = 10;
@@ -89,10 +91,11 @@
             // 
             // ElimProve
             // 
+            this.ElimProve.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ElimProve.BackColor = System.Drawing.Color.Firebrick;
             this.ElimProve.Font = new System.Drawing.Font("Segoe UI Variable Text", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ElimProve.ForeColor = System.Drawing.Color.White;
-            this.ElimProve.Location = new System.Drawing.Point(1028, 372);
+            this.ElimProve.Location = new System.Drawing.Point(957, 370);
             this.ElimProve.Name = "ElimProve";
             this.ElimProve.Size = new System.Drawing.Size(120, 35);
             this.ElimProve.TabIndex = 9;
@@ -102,10 +105,11 @@
             // 
             // editarProve
             // 
+            this.editarProve.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.editarProve.BackColor = System.Drawing.Color.SteelBlue;
             this.editarProve.Font = new System.Drawing.Font("Segoe UI Variable Text", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editarProve.ForeColor = System.Drawing.Color.White;
-            this.editarProve.Location = new System.Drawing.Point(884, 372);
+            this.editarProve.Location = new System.Drawing.Point(812, 371);
             this.editarProve.Name = "editarProve";
             this.editarProve.Size = new System.Drawing.Size(120, 35);
             this.editarProve.TabIndex = 8;
@@ -115,11 +119,12 @@
             // 
             // buttonProve
             // 
+            this.buttonProve.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonProve.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(119)))), ((int)(((byte)(36)))));
             this.buttonProve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonProve.Font = new System.Drawing.Font("Segoe UI Variable Text", 5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonProve.ForeColor = System.Drawing.Color.White;
-            this.buttonProve.Location = new System.Drawing.Point(746, 373);
+            this.buttonProve.Location = new System.Drawing.Point(661, 372);
             this.buttonProve.Name = "buttonProve";
             this.buttonProve.Size = new System.Drawing.Size(120, 35);
             this.buttonProve.TabIndex = 7;
@@ -129,10 +134,11 @@
             // 
             // buttonEliminar
             // 
+            this.buttonEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonEliminar.BackColor = System.Drawing.Color.Firebrick;
             this.buttonEliminar.Font = new System.Drawing.Font("Segoe UI Variable Text", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEliminar.ForeColor = System.Drawing.Color.White;
-            this.buttonEliminar.Location = new System.Drawing.Point(1028, 62);
+            this.buttonEliminar.Location = new System.Drawing.Point(954, 65);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(120, 35);
             this.buttonEliminar.TabIndex = 6;
@@ -142,10 +148,11 @@
             // 
             // buttonEditar
             // 
+            this.buttonEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonEditar.BackColor = System.Drawing.Color.SteelBlue;
             this.buttonEditar.Font = new System.Drawing.Font("Segoe UI Variable Text", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEditar.ForeColor = System.Drawing.Color.White;
-            this.buttonEditar.Location = new System.Drawing.Point(884, 62);
+            this.buttonEditar.Location = new System.Drawing.Point(812, 65);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(120, 35);
             this.buttonEditar.TabIndex = 5;
@@ -155,11 +162,12 @@
             // 
             // btnnuevoproducto
             // 
+            this.btnnuevoproducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnnuevoproducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(119)))), ((int)(((byte)(36)))));
             this.btnnuevoproducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnnuevoproducto.Font = new System.Drawing.Font("Segoe UI Variable Text", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnnuevoproducto.ForeColor = System.Drawing.Color.White;
-            this.btnnuevoproducto.Location = new System.Drawing.Point(746, 62);
+            this.btnnuevoproducto.Location = new System.Drawing.Point(661, 65);
             this.btnnuevoproducto.Name = "btnnuevoproducto";
             this.btnnuevoproducto.Size = new System.Drawing.Size(120, 35);
             this.btnnuevoproducto.TabIndex = 3;
@@ -169,9 +177,11 @@
             // 
             // txtbuscar
             // 
+            this.txtbuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbuscar.Font = new System.Drawing.Font("Segoe UI Variable Text", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbuscar.ForeColor = System.Drawing.Color.DimGray;
-            this.txtbuscar.Location = new System.Drawing.Point(345, 63);
+            this.txtbuscar.Location = new System.Drawing.Point(227, 62);
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(381, 34);
             this.txtbuscar.TabIndex = 0;
@@ -180,11 +190,13 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.dataGridView2);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI Variable Text", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(485, 403);
+            this.groupBox3.Location = new System.Drawing.Point(428, 400);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(669, 202);
+            this.groupBox3.Size = new System.Drawing.Size(649, 214);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Proveedores";
@@ -192,20 +204,23 @@
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(3, 30);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(663, 169);
+            this.dataGridView2.Size = new System.Drawing.Size(643, 181);
             this.dataGridView2.TabIndex = 0;
             // 
             // grpcategorias
             // 
+            this.grpcategorias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.grpcategorias.Controls.Add(this.dataGridView1);
             this.grpcategorias.Font = new System.Drawing.Font("Segoe UI Variable Text", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpcategorias.Location = new System.Drawing.Point(104, 403);
+            this.grpcategorias.Location = new System.Drawing.Point(47, 412);
             this.grpcategorias.Name = "grpcategorias";
             this.grpcategorias.Size = new System.Drawing.Size(343, 202);
             this.grpcategorias.TabIndex = 2;
@@ -215,10 +230,12 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 30);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(337, 169);
@@ -226,11 +243,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dgvproductos);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Variable Text", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(104, 89);
+            this.groupBox1.Location = new System.Drawing.Point(47, 102);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1050, 217);
+            this.groupBox1.Size = new System.Drawing.Size(1030, 217);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista de productos";
@@ -238,19 +257,22 @@
             // dgvproductos
             // 
             this.dgvproductos.AllowUserToAddRows = false;
+            this.dgvproductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvproductos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvproductos.Location = new System.Drawing.Point(3, 30);
             this.dgvproductos.Name = "dgvproductos";
+            this.dgvproductos.RowHeadersVisible = false;
             this.dgvproductos.RowHeadersWidth = 62;
             this.dgvproductos.RowTemplate.Height = 28;
-            this.dgvproductos.Size = new System.Drawing.Size(1044, 188);
+            this.dgvproductos.Size = new System.Drawing.Size(1024, 184);
             this.dgvproductos.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Variable Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(29, 18);
+            this.label2.Location = new System.Drawing.Point(39, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(191, 48);
             this.label2.TabIndex = 0;
@@ -258,18 +280,16 @@
             // 
             // FrmProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1235, 712);
+            this.ClientSize = new System.Drawing.Size(1121, 644);
             this.Controls.Add(this.pnlprincipal);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmProductos";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Productos";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmProducto_Load);
             this.pnlprincipal.ResumeLayout(false);
             this.pnlprincipal.PerformLayout();

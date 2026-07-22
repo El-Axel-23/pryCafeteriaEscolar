@@ -69,6 +69,7 @@ namespace pryCafeteriaEscolar
             productos.Dock = DockStyle.Fill;
 
             // 4. Lo agregamos al panel y lo mostramos
+            splitContainer1.Panel2.Controls.Clear();
             splitContainer1.Panel2.Controls.Add(productos);
             productos.Show();
         }
@@ -97,6 +98,16 @@ namespace pryCafeteriaEscolar
         }
 
         private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmAdministrador_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
