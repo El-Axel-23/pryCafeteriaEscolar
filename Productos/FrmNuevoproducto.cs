@@ -114,8 +114,10 @@ namespace pryCafeteriaEscolar.Productos
                 else
                 {
                     MessageBox.Show("Producto registrado correctamente");
-                    this.Close();
+                    
                 }
+                this.Close();
+
             }
             catch (Exception ex)
             {
