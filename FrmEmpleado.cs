@@ -1,6 +1,5 @@
-﻿using pryCafeteriaEscolar.Configuracion;
+
 using System;
-﻿using System;
 using pryCafeteriaEscolar.Configuracion;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +23,7 @@ namespace pryCafeteriaEscolar
 
         private void CargarVistaEnPanel(UserControl nuevaVista)
         {
+            FrmConfig configuracion = new FrmConfig();
             // Si quieres que abra Configuración al iniciar, descomenta:
             // btnConfiguracion_Click(sender, e);
             // 1. Limpiamos cualquier control que esté visible actualmente en Panel2
@@ -46,8 +46,10 @@ namespace pryCafeteriaEscolar
             configuracion.FormBorderStyle = FormBorderStyle.None;
             configuracion.Dock = DockStyle.Fill;
 
-            splitContainer1.Panel2.Controls.Add(configuracion);
-            configuracion.Show();
+            FrmConfig config = new FrmConfig();
+            config.Dock = DockStyle.Fill;
+            splitContainer1.Panel2.Controls.Add(config);
+            config.Show();
 
         }
 
