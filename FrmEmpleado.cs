@@ -75,12 +75,6 @@ namespace pryCafeteriaEscolar
         private void button2_Click(object sender, EventArgs e)
         {
             splitContainer1.Panel2.Controls.Clear();
-
-            nuevaVista.Dock = DockStyle.Fill;
-
-            splitContainer1.Panel2.Controls.Add(nuevaVista);
-
-            nuevaVista.BringToFront();
             // Pasamos una instancia del UserControl correspondiente
             CargarVistaEnPanel(new Ventas());
         }
