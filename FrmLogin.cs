@@ -35,7 +35,7 @@ namespace pryCafeteriaEscolar
 
             DataAcces conBD = new DataAcces();
 
-            using (MySqlConnection conexion = conBD.conexion())
+            using (MySqlConnection conexion = conBD.Dataacces())
             {
                 if (conexion != null)
                 {

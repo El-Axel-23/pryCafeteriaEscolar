@@ -74,31 +74,32 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            this.button1.Location = new System.Drawing.Point(336, 210);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(78, 28);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Ingresar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnIngresar.Location = new System.Drawing.Point(336, 210);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIngresar.Name = "" +
+                "";
+            this.btnIngresar.Size = new System.Drawing.Size(78, 28);
+            this.btnIngresar.TabIndex = 4;
+            this.btnIngresar.Text = "Ingresar";
+            this.btnIngresar.UseVisualStyleBackColor = false;
+            this.btnIngresar.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(368, 127);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(76, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtUser.Location = new System.Drawing.Point(368, 127);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUser.Name = "textBox2";
+            this.txtUser.Size = new System.Drawing.Size(76, 20);
+            this.txtUser.TabIndex = 3;
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(368, 76);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(76, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtPassw.BackColor = System.Drawing.Color.White;
+            this.txtPassw.Location = new System.Drawing.Point(368, 76);
+            this.txtPassw.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassw.Name = "textBox1";
+            this.txtPassw.Size = new System.Drawing.Size(76, 20);
+            this.txtPassw.TabIndex = 2;
             // 
             // label2
             // 
@@ -160,14 +161,8 @@
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.NavajoWhite;
-            this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.groupBox1);
-            this.ForeColor = System.Drawing.Color.IndianRed;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            
+
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.NavajoWhite;

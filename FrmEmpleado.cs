@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pryCafeteriaEscolar.Configuracion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,7 +22,7 @@ namespace pryCafeteriaEscolar
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            configuracion configuracion = new configuracion();
+            FrmConfig configuracion = new FrmConfig();
 
             configuracion.Dock = DockStyle.Fill;
 
@@ -32,7 +33,7 @@ namespace pryCafeteriaEscolar
         {
             splitContainer1.Panel1.Controls.Clear();
 
-            configuracion config = new configuracion();
+            FrmConfig config = new FrmConfig();
             config.Dock = DockStyle.Fill;
 
             splitContainer1.Panel2.Controls.Add(config);
