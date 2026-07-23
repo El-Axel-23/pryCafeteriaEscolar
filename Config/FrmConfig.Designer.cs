@@ -172,17 +172,17 @@
             this.cmbbxFuente.FormattingEnabled = true;
             this.cmbbxFuente.Items.AddRange(new object[] {
             "8",
+            "9",
             "10",
+            "11",
             "12",
+            "13",
             "14",
-            "16",
-            "18",
-            "20"});
+            "15"});
             this.cmbbxFuente.Location = new System.Drawing.Point(160, 134);
             this.cmbbxFuente.Name = "cmbbxFuente";
             this.cmbbxFuente.Size = new System.Drawing.Size(121, 21);
             this.cmbbxFuente.TabIndex = 10;
-            this.cmbbxFuente.SelectedIndexChanged += new System.EventHandler(this.cmbbxFuente_SelectedIndexChanged);
             // 
             // label10
             // 

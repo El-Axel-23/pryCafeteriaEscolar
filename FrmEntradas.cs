@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using pryCafeteriaEscolar.Base_de_datos;
+using pryCafeteriaEscolar.Configuracion;
 using System;
 using System.Data;
 using System.Drawing;
@@ -35,7 +36,7 @@ namespace pryCafeteriaEscolar
             {
                 DataAcces acceso = new DataAcces();
 
-                using (MySqlConnection conexion = acceso.conexion())
+                using (MySqlConnection conexion = acceso.Dataacces())
                 {
                     string consulta = @"
                         SELECT
@@ -126,7 +127,7 @@ namespace pryCafeteriaEscolar
             {
                 DataAcces acceso = new DataAcces();
 
-                using (MySqlConnection conexion = acceso.conexion())
+                using (MySqlConnection conexion = acceso.Dataacces())
                 {
                     // Productos diferentes registrados
                     string consultaProductos = @"
