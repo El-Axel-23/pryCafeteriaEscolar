@@ -184,17 +184,22 @@ namespace pryCafeteriaEscolar
         }
 
         // Se deja porque está conectado desde el Designer
-        private void dtgTabla_CellContentClick(
-            object sender,
-            DataGridViewCellEventArgs e)
+        private void dtgTabla_CellContentClick(object sender,DataGridViewCellEventArgs e)
         {
+
         }
 
         // Se deja vacío hasta programar Nueva entrada
-        private void btnEntradas_Click(
-            object sender,
-            EventArgs e)
+        private void btnEntradas_Click( object sender, EventArgs e)
         {
+            using (Base_de_datos.FrmNuevaEntrada formulario = new Base_de_datos.FrmNuevaEntrada())
+            {
+                if (formulario.ShowDialog() == DialogResult.OK)
+                {
+                    CargarEntradas();
+                    ActualizarContadores();
+                }
+            }
         }
 
       
