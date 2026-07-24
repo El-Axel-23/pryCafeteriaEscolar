@@ -133,11 +133,21 @@ namespace pryCafeteriaEscolar.Configuracion
             }
 
             ConfigGlobal.ActualizarVentanasAbiertas();
+
+            MessageBox.Show("Cambios guardados correctamente.","Configuración",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             txtHoraSistema.Text = DateTime.Now.ToString("hh:mm:ss tt");
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            FrmLogin login = new FrmLogin();
+            login.Show();
+            Application.OpenForms["FrmAdministrador"]?.Close();
+            this.Hide();
         }
     }
 }
