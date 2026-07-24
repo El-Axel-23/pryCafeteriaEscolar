@@ -18,6 +18,15 @@ namespace pryCafeteriaEscolar
             if (string.IsNullOrWhiteSpace(txtUser.Text) ||
                 string.IsNullOrWhiteSpace(txtPassw.Text))
 
+            {
+                MessageBox.Show(
+                    "Por favor, llene todos los campos.",
+                    "Campos vacíos",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+
+
 
                 if (string.IsNullOrWhiteSpace(txtUser.Text) || string.IsNullOrWhiteSpace(txtPassw.Text))
                 {
@@ -61,8 +70,7 @@ namespace pryCafeteriaEscolar
                         "WHERE usuario = @usuario " +
                         "AND contrasena = @contrasena";
 
-                    using (MySqlCommand comando =
-                           new MySqlCommand(query, conexion))
+                    using (MySqlCommand comando = new MySqlCommand(query, conexion))
                     {
                         comando.Parameters.AddWithValue(
                             "@usuario",
@@ -88,8 +96,7 @@ namespace pryCafeteriaEscolar
                             return;
                         }
 
-                        string rolUsuario =
-                            resultado.ToString().Trim();
+                        string rolUsuario = resultado.ToString().Trim();
 
                         if (rolUsuario.Equals(
                             "Administrador",
@@ -159,7 +166,6 @@ namespace pryCafeteriaEscolar
 
         private void label2_Click(object sender, EventArgs e)
         {
-
         }
     }
 }
