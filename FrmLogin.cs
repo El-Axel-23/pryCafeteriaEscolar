@@ -17,6 +17,7 @@ namespace pryCafeteriaEscolar
         {
             if (string.IsNullOrWhiteSpace(txtUser.Text) ||
                 string.IsNullOrWhiteSpace(txtPassw.Text))
+
             {
                 MessageBox.Show(
                     "Por favor, llene todos los campos.",
@@ -25,14 +26,26 @@ namespace pryCafeteriaEscolar
                     MessageBoxIcon.Warning
                 );
 
-                txtUser.Focus();
-                return;
-            }
+
+
+                if (string.IsNullOrWhiteSpace(txtUser.Text) || string.IsNullOrWhiteSpace(txtPassw.Text))
+                {
+                    MessageBox.Show(
+                        "Por favor, llene todos los campos.",
+                        "Campos vacíos",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+
+                    txtUser.Focus();
+                    return;
+                }
 
             DataAcces conBD = new DataAcces();
 
             try
             {
+
                 using (MySqlConnection conexion = conBD.Dataacces())
                 {
                     if (conexion == null)
