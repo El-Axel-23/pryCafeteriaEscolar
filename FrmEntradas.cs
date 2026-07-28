@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using pryCafeteriaEscolar.Base_de_datos;
+using pryCafeteriaEscolar.Configuracion;
 using System;
 using System.Data;
 using System.Drawing;

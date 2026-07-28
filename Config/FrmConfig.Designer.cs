@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -64,8 +64,9 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button2
+            // btnCerrarSesion
             // 
+
             this.button2.Location = new System.Drawing.Point(867, 552);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
@@ -78,6 +79,19 @@
             // 
             this.btnGuardar.Location = new System.Drawing.Point(867, 437);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+
+            this.btnCerrarSesion.Location = new System.Drawing.Point(578, 392);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(96, 42);
+            this.btnCerrarSesion.TabIndex = 22;
+            this.btnCerrarSesion.Text = "Cerrar Sesion";
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(578, 317);
+
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(144, 68);
             this.btnGuardar.TabIndex = 21;
@@ -111,7 +125,7 @@
             this.groupBox2.Size = new System.Drawing.Size(628, 286);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Configuracion del sistema";
             // 
             // txtHoraSistema
             // 
@@ -136,9 +150,12 @@
             this.label12.Location = new System.Drawing.Point(9, 31);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
+
             this.label12.Size = new System.Drawing.Size(191, 20);
+
+            this.label12.Size = new System.Drawing.Size(0, 13);
+
             this.label12.TabIndex = 6;
-            this.label12.Text = "Configuracion del sistema";
             // 
             // label15
             // 
@@ -177,31 +194,42 @@
             this.groupBox3.Size = new System.Drawing.Size(450, 286);
             this.groupBox3.TabIndex = 19;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.groupBox3.Text = "Opciones de Accesibilidad";
             // 
             // cmbbxFuente
             // 
             this.cmbbxFuente.FormattingEnabled = true;
             this.cmbbxFuente.Items.AddRange(new object[] {
             "8",
+            "9",
             "10",
+            "11",
             "12",
+            "13",
             "14",
+
             "16",
             "18",
             "20"});
             this.cmbbxFuente.Location = new System.Drawing.Point(240, 206);
             this.cmbbxFuente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+
+            "15"});
+            this.cmbbxFuente.Location = new System.Drawing.Point(160, 120);
+
             this.cmbbxFuente.Name = "cmbbxFuente";
             this.cmbbxFuente.Size = new System.Drawing.Size(180, 28);
             this.cmbbxFuente.TabIndex = 10;
-            this.cmbbxFuente.SelectedIndexChanged += new System.EventHandler(this.cmbbxFuente_SelectedIndexChanged);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
+
             this.label10.Location = new System.Drawing.Point(236, 129);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
+            this.label10.Location = new System.Drawing.Point(157, 70);
+
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 20);
             this.label10.TabIndex = 6;
@@ -210,8 +238,12 @@
             // label11
             // 
             this.label11.AutoSize = true;
+
             this.label11.Location = new System.Drawing.Point(345, 129);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
+            this.label11.Location = new System.Drawing.Point(230, 70);
+
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(60, 20);
             this.label11.TabIndex = 7;
@@ -219,8 +251,12 @@
             // 
             // trackTemas
             // 
+
             this.trackTemas.Location = new System.Drawing.Point(234, 97);
             this.trackTemas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+
+            this.trackTemas.Location = new System.Drawing.Point(156, 49);
+
             this.trackTemas.Maximum = 1;
             this.trackTemas.Name = "trackTemas";
             this.trackTemas.Size = new System.Drawing.Size(156, 69);
@@ -230,8 +266,12 @@
             // label9
             // 
             this.label9.AutoSize = true;
+
             this.label9.Location = new System.Drawing.Point(15, 206);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
+            this.label9.Location = new System.Drawing.Point(10, 120);
+
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(144, 20);
             this.label9.TabIndex = 7;
@@ -240,8 +280,12 @@
             // label8
             // 
             this.label8.AutoSize = true;
+
             this.label8.Location = new System.Drawing.Point(15, 115);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
+            this.label8.Location = new System.Drawing.Point(10, 61);
+
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(49, 20);
             this.label8.TabIndex = 6;
@@ -253,9 +297,12 @@
             this.label7.Location = new System.Drawing.Point(15, 48);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
+
             this.label7.Size = new System.Drawing.Size(194, 20);
+
+            this.label7.Size = new System.Drawing.Size(0, 13);
+
             this.label7.TabIndex = 5;
-            this.label7.Text = "Opciones de Accesibilidad";
             // 
             // groupBox1
             // 
@@ -276,36 +323,52 @@
             this.groupBox1.Size = new System.Drawing.Size(450, 286);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Informacion de la cafeteria";
             // 
             // txtCorreo
             // 
+
             this.txtCorreo.Location = new System.Drawing.Point(240, 232);
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+
+            this.txtCorreo.Location = new System.Drawing.Point(160, 145);
+
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(148, 26);
             this.txtCorreo.TabIndex = 8;
             // 
             // txtTelefono
             // 
+
             this.txtTelefono.Location = new System.Drawing.Point(240, 175);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+
+            this.txtTelefono.Location = new System.Drawing.Point(160, 108);
+
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(148, 26);
             this.txtTelefono.TabIndex = 7;
             // 
             // txtDireccion
             // 
+
             this.txtDireccion.Location = new System.Drawing.Point(240, 123);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+
+            this.txtDireccion.Location = new System.Drawing.Point(160, 74);
+
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(148, 26);
             this.txtDireccion.TabIndex = 6;
             // 
             // txtNombre
             // 
+
             this.txtNombre.Location = new System.Drawing.Point(240, 65);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+
+            this.txtNombre.Location = new System.Drawing.Point(160, 36);
+
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(148, 26);
             this.txtNombre.TabIndex = 5;
@@ -313,8 +376,12 @@
             // label6
             // 
             this.label6.AutoSize = true;
+
             this.label6.Location = new System.Drawing.Point(10, 232);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
+            this.label6.Location = new System.Drawing.Point(7, 145);
+
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 20);
             this.label6.TabIndex = 4;
@@ -323,8 +390,12 @@
             // label5
             // 
             this.label5.AutoSize = true;
+
             this.label5.Location = new System.Drawing.Point(10, 175);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
+            this.label5.Location = new System.Drawing.Point(7, 108);
+
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 20);
             this.label5.TabIndex = 3;
@@ -333,8 +404,12 @@
             // label4
             // 
             this.label4.AutoSize = true;
+
             this.label4.Location = new System.Drawing.Point(10, 123);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
+            this.label4.Location = new System.Drawing.Point(7, 74);
+
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 20);
             this.label4.TabIndex = 2;
@@ -343,8 +418,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
+
             this.label3.Location = new System.Drawing.Point(10, 77);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
+            this.label3.Location = new System.Drawing.Point(7, 44);
+
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 20);
             this.label3.TabIndex = 1;
@@ -356,6 +435,7 @@
             this.label2.Location = new System.Drawing.Point(10, 31);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
+
             this.label2.Size = new System.Drawing.Size(197, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Informacion de la cafeteria";
@@ -375,14 +455,23 @@
             this.btnInicio.TabIndex = 23;
             this.btnInicio.Text = "Inicio";
             this.btnInicio.UseVisualStyleBackColor = true;
+
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 0;
+
             // 
             // FrmConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.ClientSize = new System.Drawing.Size(1344, 765);
             this.Controls.Add(this.btnInicio);
             this.Controls.Add(this.button2);
+
+            this.ClientSize = new System.Drawing.Size(896, 497);
+            this.Controls.Add(this.btnCerrarSesion);
+
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
@@ -406,7 +495,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;

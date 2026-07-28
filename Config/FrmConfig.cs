@@ -76,13 +76,13 @@ namespace pryCafeteriaEscolar.Configuracion
         {
             if (trackTemas.Value == 0)
             {
-                this.BackColor = Color.WhiteSmoke;
-                CambiarColorControles(this, Color.WhiteSmoke, Color.Black);
+                this.BackColor = Color.NavajoWhite;
+                CambiarColorControles(this, Color.NavajoWhite, Color.Black);
             }
             else
             {
-                this.BackColor = Color.FromArgb(45, 45, 48);
-                CambiarColorControles(this, Color.FromArgb(45, 45, 48), Color.White);
+                this.BackColor = Color.FromArgb(64, 0, 0);
+                CambiarColorControles(this, Color.FromArgb(64, 0, 0), Color.White);
             }
         }
 
@@ -91,10 +91,6 @@ namespace pryCafeteriaEscolar.Configuracion
             CambiarTema();
         }
 
-        private void cmbbxFuente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void CambiarFuente(Control padre, float tamaño)
         {
@@ -117,26 +113,41 @@ namespace pryCafeteriaEscolar.Configuracion
         {
             if (trackTemas.Value == 0)
             {
-                ConfigGlobal.ColorFondo = Color.White;
+                ConfigGlobal.ColorFondo = Color.NavajoWhite;
                 ConfigGlobal.ColorTexto = Color.Black;
             }
             else
             {
-                ConfigGlobal.ColorFondo = Color.Black;
+                ConfigGlobal.ColorFondo = Color.FromArgb(64, 0, 0);
                 ConfigGlobal.ColorTexto = Color.White;
             }
 
-            if (cmbbxFuente.SelectedItem != null && float.TryParse(cmbbxFuente.SelectedItem.ToString(), out float nuevoTamanio))
+            if (cmbbxFuente.SelectedItem != null)
             {
-                ConfigGlobal.TamanioFuente = nuevoTamanio;
+                float tamaño;
+
+                if (float.TryParse(cmbbxFuente.SelectedItem.ToString(), out tamaño))
+                {
+                    ConfigGlobal.TamanioFuente = tamaño;
+                }
             }
 
             ConfigGlobal.ActualizarVentanasAbiertas();
+
+            MessageBox.Show("Cambios guardados correctamente.","Configuración",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             txtHoraSistema.Text = DateTime.Now.ToString("hh:mm:ss tt");
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            FrmLogin login = new FrmLogin();
+            login.Show();
+            Application.OpenForms["FrmAdministrador"]?.Close();
+            this.Hide();
         }
     }
 }
