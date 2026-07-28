@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pryCafeteriaEscolar.Base_de_datos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace pryCafeteriaEscolar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmProductos());
+            Application.Run(new FrmLogin());
           
         }
     }

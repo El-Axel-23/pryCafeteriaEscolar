@@ -16,8 +16,7 @@ namespace pryCafeteriaEscolar
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtUser.Text) ||
-                string.IsNullOrWhiteSpace(txtPassw.Text))
-
+       string.IsNullOrWhiteSpace(txtPassw.Text))
             {
                 MessageBox.Show(
                     "Por favor, llene todos los campos.",
@@ -26,49 +25,23 @@ namespace pryCafeteriaEscolar
                     MessageBoxIcon.Warning
                 );
 
-
-
-                if (string.IsNullOrWhiteSpace(txtUser.Text) || string.IsNullOrWhiteSpace(txtPassw.Text))
-                {
-                    MessageBox.Show(
-                        "Por favor, llene todos los campos.",
-                        "Campos vacíos",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
-
-                    txtUser.Focus();
-                    return;
-                }
+                txtUser.Focus();
+                return;
+            }
 
             DataAcces conBD = new DataAcces();
 
             try
             {
-
                 using (MySqlConnection conexion = conBD.Dataacces())
                 {
-                    if (conexion == null)
-                    {
-                        MessageBox.Show(
-                            "No se pudo conectar con la base de datos.",
-                            "Error de conexión",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error
-                        );
-
-                        return;
-                    }
-
-                    if (conexion.State != ConnectionState.Open)
-                    {
-                        conexion.Open();
-                    }
-
-                    string query =
-                        "SELECT rol FROM Usuario " +
-                        "WHERE usuario = @usuario " +
-                        "AND contrasena = @contrasena";
+                    string query = @"
+                SELECT rol
+                FROM Usuario
+                WHERE usuario = @usuario
+                AND contrasena = @contrasena
+                AND activo = 1
+                LIMIT 1;";
 
                     using (MySqlCommand comando = new MySqlCommand(query, conexion))
                     {
@@ -79,7 +52,7 @@ namespace pryCafeteriaEscolar
 
                         comando.Parameters.AddWithValue(
                             "@contrasena",
-                            txtPassw.Text
+                            txtPassw.Text.Trim()
                         );
 
                         object resultado = comando.ExecuteScalar();
@@ -88,27 +61,29 @@ namespace pryCafeteriaEscolar
                         {
                             MessageBox.Show(
                                 "Usuario o contraseña incorrectos.",
-                                "Error",
+                                "Acceso denegado",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error
                             );
 
+                            txtPassw.Clear();
+                            txtPassw.Focus();
                             return;
                         }
 
                         string rolUsuario = resultado.ToString().Trim();
 
+                        MessageBox.Show(
+                            "¡Bienvenido al sistema!",
+                            "Inicio de sesión correcto",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information
+                        );
+
                         if (rolUsuario.Equals(
                             "Administrador",
                             StringComparison.OrdinalIgnoreCase))
                         {
-                            MessageBox.Show(
-                                "¡Bienvenido al sistema!",
-                                "Éxito",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information
-                            );
-
                             FrmAdministrador administrador =
                                 new FrmAdministrador();
 
@@ -119,18 +94,21 @@ namespace pryCafeteriaEscolar
                             "Empleado",
                             StringComparison.OrdinalIgnoreCase))
                         {
-                            MessageBox.Show(
-                                "¡Bienvenido al sistema!",
-                                "Éxito",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information
-                            );
-
-                            FrmEmpleado empleado =
-                                new FrmEmpleado();
+                            FrmEmpleado empleado = new FrmEmpleado();
 
                             empleado.Show();
                             this.Hide();
+                        }
+                        else if (rolUsuario.Equals(
+                            "Supervisor",
+                            StringComparison.OrdinalIgnoreCase))
+                        {
+                            MessageBox.Show(
+                                "El rol Supervisor todavía no tiene un formulario asignado.",
+                                "Rol sin formulario",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning
+                            );
                         }
                         else
                         {
@@ -147,8 +125,8 @@ namespace pryCafeteriaEscolar
             catch (MySqlException ex)
             {
                 MessageBox.Show(
-                    "Error con la base de datos: " + ex.Message,
-                    "Error",
+                    "Error con la base de datos:\n" + ex.Message,
+                    "Error de MySQL",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
@@ -156,13 +134,14 @@ namespace pryCafeteriaEscolar
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Ocurrió un error: " + ex.Message,
+                    "Ocurrió un error:\n" + ex.Message,
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
             }
         }
+        
 
         private void label2_Click(object sender, EventArgs e)
         {
