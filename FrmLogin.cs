@@ -15,8 +15,9 @@ namespace pryCafeteriaEscolar
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            // 1. Validar campos vacíos
-            if (string.IsNullOrWhiteSpace(txtUser.Text) || string.IsNullOrWhiteSpace(txtPassw.Text))
+            if (string.IsNullOrWhiteSpace(txtUser.Text) ||
+                string.IsNullOrWhiteSpace(txtPassw.Text))
+
             {
                 MessageBox.Show(
                     "Por favor, llene todos los campos.",
@@ -25,9 +26,20 @@ namespace pryCafeteriaEscolar
                     MessageBoxIcon.Warning
                 );
 
-                txtUser.Focus();
-                return; // Sale del método si hay campos vacíos
-            }
+
+
+                if (string.IsNullOrWhiteSpace(txtUser.Text) || string.IsNullOrWhiteSpace(txtPassw.Text))
+                {
+                    MessageBox.Show(
+                        "Por favor, llene todos los campos.",
+                        "Campos vacíos",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+
+                    txtUser.Focus();
+                    return;
+                }
 
             // 2. Proceso de autenticación
             DataAcces conBD = new DataAcces();
@@ -44,6 +56,7 @@ namespace pryCafeteriaEscolar
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error
                         );
+
                         return;
                     }
 
@@ -59,8 +72,15 @@ namespace pryCafeteriaEscolar
 
                     using (MySqlCommand comando = new MySqlCommand(query, conexion))
                     {
-                        comando.Parameters.AddWithValue("@usuario", txtUser.Text.Trim());
-                        comando.Parameters.AddWithValue("@contrasena", txtPassw.Text.Trim());
+                        comando.Parameters.AddWithValue(
+                            "@usuario",
+                            txtUser.Text.Trim()
+                        );
+
+                        comando.Parameters.AddWithValue(
+                            "@contrasena",
+                            txtPassw.Text
+                        );
 
                         object resultado = comando.ExecuteScalar();
 
@@ -68,16 +88,19 @@ namespace pryCafeteriaEscolar
                         {
                             MessageBox.Show(
                                 "Usuario o contraseña incorrectos.",
-                                "Error",
+                                "Acceso denegado",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error
                             );
+
                             return;
                         }
 
                         string rolUsuario = resultado.ToString().Trim();
 
-                        if (rolUsuario.Equals("Administrador", StringComparison.OrdinalIgnoreCase))
+                        if (rolUsuario.Equals(
+                            "Administrador",
+                            StringComparison.OrdinalIgnoreCase))
                         {
                             MessageBox.Show(
                                 "¡Bienvenido al sistema!",
@@ -86,20 +109,33 @@ namespace pryCafeteriaEscolar
                                 MessageBoxIcon.Information
                             );
 
-                            FrmAdministrador administrador = new FrmAdministrador();
+                            FrmAdministrador administrador =
+                                new FrmAdministrador();
+
                             administrador.Show();
                             this.Hide();
                         }
                         else if (rolUsuario.Equals("Empleado", StringComparison.OrdinalIgnoreCase))
                         {
+                            FrmEmpleado empleado = new FrmEmpleado();
+
+                            empleado.Show();
+                            this.Hide();
+                        }
+                        else if (rolUsuario.Equals(
+                            "Supervisor",
+                            StringComparison.OrdinalIgnoreCase))
+                        {
                             MessageBox.Show(
-                                "¡Bienvenido al sistema!",
-                                "Éxito",
+                                "El rol Supervisor todavía no tiene un formulario asignado.",
+                                "Rol sin formulario",
                                 MessageBoxButtons.OK,
-                                MessageBoxIcon.Information
+                                MessageBoxIcon.Warning
                             );
 
-                            FrmEmpleado empleado = new FrmEmpleado();
+                            FrmEmpleado empleado =
+                                new FrmEmpleado();
+
                             empleado.Show();
                             this.Hide();
                         }
@@ -118,8 +154,8 @@ namespace pryCafeteriaEscolar
             catch (MySqlException ex)
             {
                 MessageBox.Show(
-                    "Error con la base de datos: " + ex.Message,
-                    "Error",
+                    "Error con la base de datos:\n" + ex.Message,
+                    "Error de MySQL",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
@@ -127,19 +163,41 @@ namespace pryCafeteriaEscolar
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Ocurrió un error: " + ex.Message,
+                    "Ocurrió un error:\n" + ex.Message,
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
             }
         }
+        
 
         private void label2_Click(object sender, EventArgs e)
         {
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUser_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void FrmLogin_Resize(object sender, EventArgs e)
+        {
+            
+           
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
