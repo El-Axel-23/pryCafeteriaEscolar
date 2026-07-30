@@ -56,17 +56,23 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(231)))), ((int)(((byte)(208)))));
+
             this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
             this.splitContainer1.Panel1MinSize = 250;
+
+
+
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
+
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel2);
             this.splitContainer1.Size = new System.Drawing.Size(1388, 721);
             this.splitContainer1.SplitterDistance = 303;
@@ -102,14 +108,23 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.582624F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(302, 714);
             this.tableLayoutPanel1.TabIndex = 14;
+
+            
+            
+            
+
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox1.Image = global::pryCafeteriaEscolar.Properties.Resources.cafe;
+
             this.pictureBox1.Location = new System.Drawing.Point(77, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(147, 93);
+
+            
+
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -131,6 +146,7 @@
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -164,6 +180,9 @@
             this.button3.Text = "Reportes";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+
+            
+
             // 
             // button5
             // 
@@ -171,12 +190,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button5.BackColor = System.Drawing.Color.Beige;
+
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Image = global::pryCafeteriaEscolar.Properties.Resources._6;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.Location = new System.Drawing.Point(3, 451);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(296, 68);
+            
+
             this.button5.TabIndex = 4;
             this.button5.Text = "Cajas";
             this.button5.UseVisualStyleBackColor = false;
@@ -216,17 +238,22 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.BackColor = System.Drawing.Color.Beige;
+
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Image = global::pryCafeteriaEscolar.Properties.Resources._5;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.Location = new System.Drawing.Point(3, 377);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(296, 68);
+
+        
+
             this.button4.TabIndex = 3;
             this.button4.Text = "Entradas";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -257,20 +284,28 @@
             this.label1.Size = new System.Drawing.Size(897, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Administra los productos, ventas y movimientos de la cafetería escolar";
+            
+            
+
             // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = global::pryCafeteriaEscolar.Properties.Resources.cafe;
+
             this.pictureBox2.Location = new System.Drawing.Point(186, 174);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(707, 456);
+
+            
+
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
             // label2
             // 
+
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 30);
@@ -279,19 +314,31 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "¡Bienvenido!";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+
+
+
             // 
             // FrmAdministrador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+
             this.ClientSize = new System.Drawing.Size(1388, 721);
+
+            
+
             this.Controls.Add(this.splitContainer1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmAdministrador";
             this.Text = "Cafetería Escolar";
             this.TransparencyKey = System.Drawing.Color.RosyBrown;
+
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+
+            
+
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

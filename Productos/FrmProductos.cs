@@ -162,7 +162,7 @@ namespace pryCafeteriaEscolar
                 Convert.ToInt32(dgvproductos.CurrentRow.Cells["stock"].Value)
             );
             frm.ShowDialog();
-            CargandoProve();
+            CargandoP();
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
@@ -201,12 +201,12 @@ namespace pryCafeteriaEscolar
             FrmNuevoproveedor frn = new FrmNuevoproveedor();
 
             frn.ShowDialog();
-            CargandoP();
+            CargandoProve();
         }
 
         private void editarProve_Click(object sender, EventArgs e)
         {
-            if(dataGridView2.CurrentRow.Cells == null)
+            if(dataGridView2.CurrentRow == null)
             {
                 MessageBox.Show("Seleccione un proveedor.");
                 return;

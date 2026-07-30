@@ -55,6 +55,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -66,13 +67,17 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
+
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel2);
             this.splitContainer1.Size = new System.Drawing.Size(1388, 721);
             this.splitContainer1.SplitterDistance = 302;
+
+
             this.splitContainer1.TabIndex = 1;
             // 
             // tableLayoutPanel1
             // 
+
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -97,9 +102,13 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.582624F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(302, 753);
             this.tableLayoutPanel1.TabIndex = 15;
+
+
+
             // 
             // btnProductos
             // 
+
             this.btnProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -113,9 +122,12 @@
             this.btnProductos.TabIndex = 1;
             this.btnProductos.Text = "Productos";
             this.btnProductos.UseVisualStyleBackColor = false;
+
+
             // 
             // button2
             // 
+
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -129,20 +141,26 @@
             this.button2.TabIndex = 0;
             this.button2.Text = "Ventas";
             this.button2.UseVisualStyleBackColor = false;
+
+
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox1.Image = global::pryCafeteriaEscolar.Properties.Resources.cafe;
+
             this.pictureBox1.Location = new System.Drawing.Point(75, 107);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(151, 103);
+
+
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
             // label3
             // 
+
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -151,9 +169,12 @@
             this.label3.Size = new System.Drawing.Size(288, 25);
             this.label3.TabIndex = 7;
             this.label3.Text = "\"Sistema de control de ventas\"";
+
+
             // 
             // tableLayoutPanel2
             // 
+
             this.tableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -182,28 +203,39 @@
             this.lblBienvenido.TabIndex = 3;
             this.lblBienvenido.Text = "¡Bienvenido!";
             this.lblBienvenido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+
+
             // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = global::pryCafeteriaEscolar.Properties.Resources.cafe;
+
             this.pictureBox2.Location = new System.Drawing.Point(186, 184);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(707, 437);
+
+
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
+
+
+
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
+
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(91, 666);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(897, 32);
             this.label1.TabIndex = 5;
             this.label1.Text = "Administra los productos, ventas y movimientos de la cafetería escolar";
+
+
             // 
             // button1
             // 
@@ -227,11 +259,16 @@
             // 
             // FrmEmpleado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.ClientSize = new System.Drawing.Size(1388, 721);
+
+
             this.Controls.Add(this.splitContainer1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmEmpleado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.splitContainer1.Panel1.ResumeLayout(false);

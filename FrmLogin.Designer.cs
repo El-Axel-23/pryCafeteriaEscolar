@@ -3,28 +3,31 @@
     partial class FrmLogin
     {
         /// <summary>
-        /// Required designer variable.
+        /// Variable necesaria para el diseñador.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        /// Liberar los recursos utilizados.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">
+        /// true para liberar recursos administrados; false en caso contrario.
+        /// </param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Código generado por el Diseñador de Windows Forms
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// Método necesario para admitir el Diseñador.
+        /// No modifiques su contenido manualmente desde el diseñador.
         /// </summary>
         private void InitializeComponent()
         {
@@ -44,6 +47,7 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
+
             // btnIngresar
             // 
             this.btnIngresar.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -87,15 +91,19 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 135F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1042, 495);
             this.tableLayoutPanel1.TabIndex = 0;
+
+
             // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+
             this.pictureBox1.Location = new System.Drawing.Point(3, 2);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(515, 491);
+
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -130,38 +138,51 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
+
             this.label2.Location = new System.Drawing.Point(78, 236);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(176, 36);
+
+
             this.label2.TabIndex = 1;
             this.label2.Text = "Contraseña:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+
+
+
             // txtUser
             // 
             this.txtUser.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtUser.BackColor = System.Drawing.Color.White;
+
             this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUser.Location = new System.Drawing.Point(259, 104);
             this.txtUser.Margin = new System.Windows.Forms.Padding(2);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(185, 41);
+
+
             this.txtUser.TabIndex = 2;
             this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             // 
             // txtPassw
             // 
+
             this.txtPassw.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtPassw.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassw.Location = new System.Drawing.Point(259, 234);
             this.txtPassw.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassw.Name = "txtPassw";
             this.txtPassw.Size = new System.Drawing.Size(185, 41);
+
+
             this.txtPassw.TabIndex = 3;
             this.txtPassw.UseSystemPasswordChar = true;
             // 
             // label1
             // 
+
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -172,25 +193,34 @@
             this.label1.Size = new System.Drawing.Size(127, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario:";
+
+
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.NavajoWhite;
+
             this.ClientSize = new System.Drawing.Size(1375, 715);
             this.Controls.Add(this.panelLogin);
+
+
             this.ForeColor = System.Drawing.Color.IndianRed;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmLogin";
-            this.Text = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Inicio de sesión";
             this.TransparencyKey = System.Drawing.Color.Silver;
+
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.Resize += new System.EventHandler(this.FrmLogin_Resize);
             this.panelLogin.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -203,10 +233,13 @@
         private System.Windows.Forms.Panel panelLogin;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.TextBox txtPassw;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+
+
     }
 }

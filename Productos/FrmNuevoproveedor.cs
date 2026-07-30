@@ -48,22 +48,29 @@ namespace pryCafeteriaEscolar.Productos
                     string Sql;
                     if(proveedorEd)
                     {
-                        Sql = @"UPDATE Proveedor SET  RFC=@rfc,nombre=@nombre,correo=@correo,telefono=@telefono,calle=@calle,colonia=@colonia,ciudad=@ciudad,cp=@cp WHERE RFC=@original";
+                        Sql = @"UPDATE Proveedor SET RFC=@rfc,nombre=@nombre,correo=@correo,telefono=@telefono,calle=@calle,colonia=@colonia,ciudad=@ciudad,cp=@cp WHERE RFC=@original";
                     }
                     else
                     {
-                        Sql = @"INSER INTO Proveedor (RFC,nombre,correo,telefono,calle,colonia,ciudad,cp) VALUES(@rfc,@nombre,@correo,@telefono,@calle,@colonia,@ciudad,@cp)";
+                        Sql = @"INSERT INTO Proveedor(RFC,nombre,correo,telefono,calle,colonia,ciudad,cp) VALUES(@rfc,@nombre,@correo,@telefono,@calle,@colonia,@ciudad,@cp)";
                     }
                     MySqlCommand command = new MySqlCommand(Sql, connection);
 
+
                     command.Parameters.AddWithValue("@rfc", txtrfc.Text.Trim());
-                    command.Parameters.AddWithValue("@nombre", txtrfc.Text.Trim());
-                    command.Parameters.AddWithValue("@correo", txtrfc.Text.Trim());
-                    command.Parameters.AddWithValue("@telefono", txtrfc.Text.Trim());
-                    command.Parameters.AddWithValue("@calle", txtrfc.Text.Trim());
-                    command.Parameters.AddWithValue("@colonia", txtrfc.Text.Trim());
-                    command.Parameters.AddWithValue("@ciudad", txtrfc.Text.Trim());
-                    command.Parameters.AddWithValue("@cp", txtrfc.Text.Trim());
+                    command.Parameters.AddWithValue("@nombre", txtnombrep.Text.Trim());
+                    command.Parameters.AddWithValue("@correo", txtcorreop.Text.Trim());
+                    command.Parameters.AddWithValue("@telefono", txttelefonop.Text.Trim());
+                    command.Parameters.AddWithValue("@calle", txtcallep.Text.Trim());
+                    command.Parameters.AddWithValue("@colonia", txtcoloniap.Text.Trim());
+                    command.Parameters.AddWithValue("@ciudad", txtciudadp.Text.Trim());
+                    command.Parameters.AddWithValue("@cp", txtcpP.Text.Trim());
+                    
+                    if (proveedorEd)
+                    {
+                        command.Parameters.AddWithValue("@original", RFCOriginal);
+                    }
+                    command.ExecuteNonQuery();
 
                     if (proveedorEd)
                     {
@@ -72,8 +79,10 @@ namespace pryCafeteriaEscolar.Productos
                     else
                     {
                         MessageBox.Show("Proveedor registrado correctamente.");
-                        this.Close();
+                        
                     }
+                    this.Close();
+
                 }
             }
             catch (Exception ex)
@@ -85,6 +94,11 @@ namespace pryCafeteriaEscolar.Productos
         private void btncancelarp_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Lbltitulo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

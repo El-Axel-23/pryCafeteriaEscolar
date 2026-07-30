@@ -111,6 +111,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base de datos\DataAcces.cs" />
+    <Compile Include="Base de datos\FrmNuevaEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base de datos\FrmNuevaEntrada.Designer.cs">
+      <DependentUpon>FrmNuevaEntrada.cs</DependentUpon>
+    </Compile>
     <Compile Include="Config\FrmConfig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Base de datos\FrmNuevaEntrada.resx">
+      <DependentUpon>FrmNuevaEntrada.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Config\FrmConfig.resx">
       <DependentUpon>FrmConfig.cs</DependentUpon>
     </EmbeddedResource>
