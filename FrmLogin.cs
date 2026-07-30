@@ -15,9 +15,8 @@ namespace pryCafeteriaEscolar
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtUser.Text) ||
-                string.IsNullOrWhiteSpace(txtPassw.Text))
-
+            // 1. Validar campos vacíos
+            if (string.IsNullOrWhiteSpace(txtUser.Text) || string.IsNullOrWhiteSpace(txtPassw.Text))
             {
                 MessageBox.Show(
                     "Por favor, llene todos los campos.",
@@ -26,142 +25,113 @@ namespace pryCafeteriaEscolar
                     MessageBoxIcon.Warning
                 );
 
+                txtUser.Focus();
+                return; // Sale del método si hay campos vacíos
+            }
 
+            // 2. Proceso de autenticación
+            DataAcces conBD = new DataAcces();
 
-                if (string.IsNullOrWhiteSpace(txtUser.Text) || string.IsNullOrWhiteSpace(txtPassw.Text))
+            try
+            {
+                using (MySqlConnection conexion = conBD.Dataacces())
                 {
-                    MessageBox.Show(
-                        "Por favor, llene todos los campos.",
-                        "Campos vacíos",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
-
-                    txtUser.Focus();
-                    return;
-                }
-
-                DataAcces conBD = new DataAcces();
-
-                try
-                {
-
-                    using (MySqlConnection conexion = conBD.Dataacces())
+                    if (conexion == null)
                     {
-                        if (conexion == null)
+                        MessageBox.Show(
+                            "No se pudo conectar con la base de datos.",
+                            "Error de conexión",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                        return;
+                    }
+
+                    if (conexion.State != ConnectionState.Open)
+                    {
+                        conexion.Open();
+                    }
+
+                    string query =
+                        "SELECT rol FROM Usuario " +
+                        "WHERE usuario = @usuario " +
+                        "AND contrasena = @contrasena";
+
+                    using (MySqlCommand comando = new MySqlCommand(query, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@usuario", txtUser.Text.Trim());
+                        comando.Parameters.AddWithValue("@contrasena", txtPassw.Text.Trim());
+
+                        object resultado = comando.ExecuteScalar();
+
+                        if (resultado == null)
                         {
                             MessageBox.Show(
-                                "No se pudo conectar con la base de datos.",
-                                "Error de conexión",
+                                "Usuario o contraseña incorrectos.",
+                                "Error",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error
                             );
-
                             return;
                         }
 
-                        if (conexion.State != ConnectionState.Open)
+                        string rolUsuario = resultado.ToString().Trim();
+
+                        if (rolUsuario.Equals("Administrador", StringComparison.OrdinalIgnoreCase))
                         {
-                            conexion.Open();
+                            MessageBox.Show(
+                                "¡Bienvenido al sistema!",
+                                "Éxito",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information
+                            );
+
+                            FrmAdministrador administrador = new FrmAdministrador();
+                            administrador.Show();
+                            this.Hide();
                         }
-
-                        string query =
-                            "SELECT rol FROM Usuario " +
-                            "WHERE usuario = @usuario " +
-                            "AND contrasena = @contrasena";
-
-                        using (MySqlCommand comando = new MySqlCommand(query, conexion))
+                        else if (rolUsuario.Equals("Empleado", StringComparison.OrdinalIgnoreCase))
                         {
-                            comando.Parameters.AddWithValue(
-                                "@usuario",
-                                txtUser.Text.Trim()
+                            MessageBox.Show(
+                                "¡Bienvenido al sistema!",
+                                "Éxito",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information
                             );
 
-                            comando.Parameters.AddWithValue(
-                                "@contrasena",
-                                txtPassw.Text
+                            FrmEmpleado empleado = new FrmEmpleado();
+                            empleado.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show(
+                                "Rol no reconocido: " + rolUsuario,
+                                "Error de rol",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning
                             );
-
-                            object resultado = comando.ExecuteScalar();
-
-                            if (resultado == null)
-                            {
-                                MessageBox.Show(
-                                    "Usuario o contraseña incorrectos.",
-                                    "Error",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error
-                                );
-
-                                return;
-                            }
-
-                            string rolUsuario = resultado.ToString().Trim();
-
-                            if (rolUsuario.Equals(
-                                "Administrador",
-                                StringComparison.OrdinalIgnoreCase))
-                            {
-                                MessageBox.Show(
-                                    "¡Bienvenido al sistema!",
-                                    "Éxito",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information
-                                );
-
-                                FrmAdministrador administrador =
-                                    new FrmAdministrador();
-
-                                administrador.Show();
-                                this.Hide();
-                            }
-                            else if (rolUsuario.Equals(
-                                "Empleado",
-                                StringComparison.OrdinalIgnoreCase))
-                            {
-                                MessageBox.Show(
-                                    "¡Bienvenido al sistema!",
-                                    "Éxito",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information
-                                );
-
-                                FrmEmpleado empleado =
-                                    new FrmEmpleado();
-
-                                empleado.Show();
-                                this.Hide();
-                            }
-                            else
-                            {
-                                MessageBox.Show(
-                                    "Rol no reconocido: " + rolUsuario,
-                                    "Error de rol",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning
-                                );
-                            }
                         }
                     }
                 }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show(
-                        "Error con la base de datos: " + ex.Message,
-                        "Error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error
-                    );
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(
-                        "Ocurrió un error: " + ex.Message,
-                        "Error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error
-                    );
-                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(
+                    "Error con la base de datos: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Ocurrió un error: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
         }
 
