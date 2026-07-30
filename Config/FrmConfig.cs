@@ -149,5 +149,15 @@ namespace pryCafeteriaEscolar.Configuracion
             Application.OpenForms["FrmAdministrador"]?.Close();
             this.Hide();
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbbxFuente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

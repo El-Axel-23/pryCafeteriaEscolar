@@ -15,9 +15,7 @@ namespace pryCafeteriaEscolar
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtUser.Text) ||
-                string.IsNullOrWhiteSpace(txtPassw.Text))
-
+            if (string.IsNullOrWhiteSpace(txtUser.Text) || string.IsNullOrWhiteSpace(txtPassw.Text))
             {
                 MessageBox.Show(
                     "Por favor, llene todos los campos.",
@@ -26,20 +24,9 @@ namespace pryCafeteriaEscolar
                     MessageBoxIcon.Warning
                 );
 
-
-
-                if (string.IsNullOrWhiteSpace(txtUser.Text) || string.IsNullOrWhiteSpace(txtPassw.Text))
-                {
-                    MessageBox.Show(
-                        "Por favor, llene todos los campos.",
-                        "Campos vacíos",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
-
-                    txtUser.Focus();
-                    return;
-                }
+                txtUser.Focus();
+                return;
+            }
 
             // 2. Proceso de autenticación
             DataAcces conBD = new DataAcces();
@@ -186,10 +173,6 @@ namespace pryCafeteriaEscolar
 
         }
 
-        private void FrmLogin_Load(object sender, EventArgs e)
-        {
-            
-        }
 
         private void FrmLogin_Resize(object sender, EventArgs e)
         {
