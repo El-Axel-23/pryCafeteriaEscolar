@@ -42,30 +42,25 @@ namespace pryCafeteriaEscolar
             nuevaVista.BringToFront();
         }
 
-        private void FrmEmpleado_Load(object sender, EventArgs e)
+        private void RestablecerColorBotones()
         {
-            splitContainer1.Panel2.Controls.Clear();
 
-            FrmConfig configuracion = new FrmConfig();
+            // Cambia SystemColors.Control por el color por defecto original de tus botones
+            btnProductos.BackColor = SystemColors.Control;
+            button2.BackColor = SystemColors.Control;
 
-            configuracion.TopLevel = false;
-            configuracion.FormBorderStyle = FormBorderStyle.None;
-            configuracion.Dock = DockStyle.Fill;
-
-
-            splitContainer1.Panel2.Controls.Add(configuracion);
-            configuracion.Show();
-
-            FrmConfig config = new FrmConfig();
-            config.Dock = DockStyle.Fill;
-            splitContainer1.Panel2.Controls.Add(config);
-            config.Show();
 
 
         }
-
         private void btnProductos_Click(object sender, EventArgs e)
         {
+
+            RestablecerColorBotones(); // Limpia los colores de los demás botones
+            btnProductos.BackColor = System.Drawing.ColorTranslator.FromHtml("#F4A460");
+
+            // 1. Limpiamos el Panel2 (donde se muestra la vista)
+
+
             splitContainer1.Panel2.Controls.Clear();
 
             FrmProductos productos = new FrmProductos();
@@ -81,10 +76,16 @@ namespace pryCafeteriaEscolar
         private void button2_Click(object sender, EventArgs e)
         {
 
-            splitContainer1.Panel2.Controls.Clear();
+            RestablecerColorBotones(); // Limpia los colores de los demás botones
+            button2.BackColor = System.Drawing.ColorTranslator.FromHtml("#F4A460");
+
+
+
             // Pasamos una instancia del UserControl correspondiente
 
             CargarVistaEnPanel(new Ventas());
         }
+
+        
     }
 }
