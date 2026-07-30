@@ -185,7 +185,6 @@
             this.cmbbxFuente.Name = "cmbbxFuente";
             this.cmbbxFuente.Size = new System.Drawing.Size(121, 21);
             this.cmbbxFuente.TabIndex = 10;
-            this.cmbbxFuente.SelectedIndexChanged += new System.EventHandler(this.cmbbxFuente_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -222,7 +221,6 @@
             this.label9.Size = new System.Drawing.Size(97, 13);
             this.label9.TabIndex = 7;
             this.label9.Text = "Tamaño de Fuente";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label8
             // 
