@@ -15,9 +15,9 @@ namespace pryCafeteriaEscolar
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+            // 1. Validar campos vacíos
             if (string.IsNullOrWhiteSpace(txtUser.Text) ||
                 string.IsNullOrWhiteSpace(txtPassw.Text))
-
             {
                 MessageBox.Show(
                     "Por favor, llene todos los campos.",
@@ -26,22 +26,11 @@ namespace pryCafeteriaEscolar
                     MessageBoxIcon.Warning
                 );
 
+                txtUser.Focus();
+                return;
+            }
 
-
-                if (string.IsNullOrWhiteSpace(txtUser.Text) || string.IsNullOrWhiteSpace(txtPassw.Text))
-                {
-                    MessageBox.Show(
-                        "Por favor, llene todos los campos.",
-                        "Campos vacíos",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
-
-                    txtUser.Focus();
-                    return;
-                }
-
-            // 2. Proceso de autenticación
+            // 2. Crear conexión
             DataAcces conBD = new DataAcces();
 
             try
@@ -60,6 +49,7 @@ namespace pryCafeteriaEscolar
                         return;
                     }
 
+                    // Solo abrir si Dataacces() no la abrió anteriormente
                     if (conexion.State != ConnectionState.Open)
                     {
                         conexion.Open();
@@ -93,6 +83,8 @@ namespace pryCafeteriaEscolar
                                 MessageBoxIcon.Error
                             );
 
+                            txtPassw.Clear();
+                            txtPassw.Focus();
                             return;
                         }
 
@@ -103,22 +95,28 @@ namespace pryCafeteriaEscolar
                             StringComparison.OrdinalIgnoreCase))
                         {
                             MessageBox.Show(
-                                "¡Bienvenido al sistema!",
-                                "Éxito",
+                                "¡Bienvenido, Administrador!",
+                                "Acceso correcto",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information
                             );
 
-                            FrmAdministrador administrador =
-                                new FrmAdministrador();
-
+                            FrmAdministrador administrador = new FrmAdministrador();
                             administrador.Show();
                             this.Hide();
                         }
-                        else if (rolUsuario.Equals("Empleado", StringComparison.OrdinalIgnoreCase))
+                        else if (rolUsuario.Equals(
+                            "Empleado",
+                            StringComparison.OrdinalIgnoreCase))
                         {
-                            FrmEmpleado empleado = new FrmEmpleado();
+                            MessageBox.Show(
+                                "¡Bienvenido, Empleado!",
+                                "Acceso correcto",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information
+                            );
 
+                            FrmEmpleado empleado = new FrmEmpleado();
                             empleado.Show();
                             this.Hide();
                         }
@@ -127,15 +125,13 @@ namespace pryCafeteriaEscolar
                             StringComparison.OrdinalIgnoreCase))
                         {
                             MessageBox.Show(
-                                "El rol Supervisor todavía no tiene un formulario asignado.",
-                                "Rol sin formulario",
+                                "El Supervisor será enviado al formulario de empleado.",
+                                "Acceso correcto",
                                 MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning
+                                MessageBoxIcon.Information
                             );
 
-                            FrmEmpleado empleado =
-                                new FrmEmpleado();
-
+                            FrmEmpleado empleado = new FrmEmpleado();
                             empleado.Show();
                             this.Hide();
                         }
@@ -170,7 +166,7 @@ namespace pryCafeteriaEscolar
                 );
             }
         }
-        
+
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -186,10 +182,10 @@ namespace pryCafeteriaEscolar
 
         }
 
-        private void FrmLogin_Load(object sender, EventArgs e)
-        {
+        //private void FrmLogin_Load(object sender, EventArgs e)
+        //{
             
-        }
+        //}
 
         private void FrmLogin_Resize(object sender, EventArgs e)
         {
@@ -201,5 +197,10 @@ namespace pryCafeteriaEscolar
         {
 
         }
+
+       // private void btnIngresar_Click_1(object sender, EventArgs e)
+        //{
+
+        //}
     }
 }
