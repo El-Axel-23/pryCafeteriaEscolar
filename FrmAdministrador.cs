@@ -38,25 +38,42 @@ namespace pryCafeteriaEscolar
             }
         }
 
-
-        private void button6_Click(object sender, EventArgs e)
+        // 1. Método para restablecer el color de fondo de los botones principales
+        private void RestablecerColorBotones()
         {
+            // Cambia SystemColors.Control por el color por defecto original de tus botones
+            button6.BackColor = System.Drawing.ColorTranslator.FromHtml("Beige");
+            button2.BackColor = System.Drawing.ColorTranslator.FromHtml("Beige");
+            button4.BackColor = System.Drawing.ColorTranslator.FromHtml("Beige");
+            button3.BackColor = System.Drawing.ColorTranslator.FromHtml("Beige");
+            button5.BackColor = System.Drawing.ColorTranslator.FromHtml("Beige");
+        }
+
+        private void btnConfiguracion_Click(object sender, EventArgs e)
+        {
+            RestablecerColorBotones(); // Limpia los colores de los demás botones
+            btnConfiguracion.BackColor = System.Drawing.ColorTranslator.FromHtml("#F4A460");
+
             FrmConfig frm = new FrmConfig();
             frm.TopLevel = false; // Permite metelo en un contenedor/panel
             frm.FormBorderStyle = FormBorderStyle.None; // Quita los bordes de la ventana
 
             CargarVistaEnPanel(frm);
         }
-
-
-        private void button1_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
-            // Pasamos una instancia del UserControl correspondiente
-            CargarVistaEnPanel(new Ventas());
+            RestablecerColorBotones(); // Limpia los colores de los demás botones
+            button6.BackColor = System.Drawing.ColorTranslator.FromHtml("#F4A460");
+
+            Ventas frm = new Ventas();
+
+            CargarVistaEnPanel(frm);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            RestablecerColorBotones(); // Limpia los colores de los demás botones
+            button2.BackColor = System.Drawing.ColorTranslator.FromHtml("#F4A460");
 
             splitContainer1.Panel2.Controls.Clear();
 
@@ -73,32 +90,39 @@ namespace pryCafeteriaEscolar
             productos.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void button4_Click(object sender, EventArgs e)
         {
+            RestablecerColorBotones(); // Limpia los colores de los demás botones
+            button4.BackColor = System.Drawing.ColorTranslator.FromHtml("#F4A460");
+
             // 1. Limpiamos el panel derecho para quitar la vista anterior
-    splitContainer1.Panel2.Controls.Clear();
+            splitContainer1.Panel2.Controls.Clear();
 
-    // 2. Instanciamos FrmEntradas
-    FrmEntradas entradas = new FrmEntradas();
+            // 2. Instanciamos FrmEntradas
+            FrmEntradas entradas = new FrmEntradas();
 
-    // 3. Quitamos el comportamiento de ventana externa y ajustamos al panel
-    entradas.TopLevel = false;
-    entradas.FormBorderStyle = FormBorderStyle.None;
-    entradas.Dock = DockStyle.Fill;
+            // 3. Quitamos el comportamiento de ventana externa y ajustamos al panel
+            entradas.TopLevel = false;
+            entradas.FormBorderStyle = FormBorderStyle.None;
+            entradas.Dock = DockStyle.Fill;
 
-    // 4. Lo agregamos a Panel2 y lo mostramos
-    splitContainer1.Panel2.Controls.Add(entradas);
-    entradas.Show();
+            // 4. Lo agregamos a Panel2 y lo mostramos
+            splitContainer1.Panel2.Controls.Add(entradas);
+            entradas.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            RestablecerColorBotones(); // Limpia los colores de los demás botones
+            button3.BackColor = System.Drawing.ColorTranslator.FromHtml("#F4A460");
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            RestablecerColorBotones(); // Limpia los colores de los demás botones
+            button5.BackColor = System.Drawing.ColorTranslator.FromHtml("#F4A460");
         }
     }
 }

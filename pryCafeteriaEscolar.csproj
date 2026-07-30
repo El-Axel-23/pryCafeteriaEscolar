@@ -118,6 +118,7 @@
       <DependentUpon>FrmConfig.cs</DependentUpon>
     </Compile>
     <Compile Include="Config\SaveConfig.cs" />
+    <Compile Include="DatosFecha.cs" />
     <Compile Include="FrmEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +225,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ventas\borrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ventas\registrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ventas\cobrar.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
