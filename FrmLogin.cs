@@ -151,5 +151,26 @@ namespace pryCafeteriaEscolar
         {
 
         }
+
+        private void txtUser_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void FrmLogin_Resize(object sender, EventArgs e)
+        {
+            
+           
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
