@@ -214,7 +214,6 @@
             this.cmbbxFuente.Location = new System.Drawing.Point(240, 206);
             this.cmbbxFuente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 
-            "15"});
             this.cmbbxFuente.Location = new System.Drawing.Point(160, 120);
 
             this.cmbbxFuente.Name = "cmbbxFuente";
