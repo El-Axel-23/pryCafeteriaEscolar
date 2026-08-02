@@ -37,24 +37,25 @@ namespace pryCafeteriaEscolar.Configuracion
                 DataAcces data = new DataAcces();
                 MySqlConnection connection = data.Dataacces();
 
-                string Sql = @"SELECT nombreCafe, direccionCafe, telefonoCafe, correoCafe FROM Empresa LIMIT 1";
+                string sql = @"SELECT nombre, direccion, telefono, correo FROM InformacionCafeteria LIMIT 1";
 
-                MySqlCommand cmd = new MySqlCommand(Sql, connection);
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read())
                 {
-                    txtNombre.Text = reader["nombreCafe"].ToString();
-                    txtDireccion.Text = reader["direccionCafe"].ToString();
-                    txtTelefono.Text = reader["telefonoCafe"].ToString();
-                    txtCorreo.Text = reader["correoCafe"].ToString();
+                    txtNombre.Text = reader["nombre"].ToString();
+                    txtDireccion.Text = reader["direccion"].ToString();
+                    txtTelefono.Text = reader["telefono"].ToString();
+                    txtCorreo.Text = reader["correo"].ToString();
                 }
 
+                reader.Close();
                 connection.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar la información de la empresa: " + ex.Message);
+                MessageBox.Show("Error al cargar la información de la cafetería: " + ex.Message);
             }
         }
 
@@ -156,6 +157,11 @@ namespace pryCafeteriaEscolar.Configuracion
         }
 
         private void cmbbxFuente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
         {
 
         }
