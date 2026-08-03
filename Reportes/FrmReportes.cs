@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using pryCafeteriaEscolar.Base_de_datos;
+using pryCafeteriaEscolar.Configuracion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,6 +27,8 @@ namespace pryCafeteriaEscolar.Reportes
             cmbTipoReporte.SelectedIndex = 0;
             dtpDesde.Value = DateTime.Today.AddDays(-30);
             dtpHasta.Value = DateTime.Today;
+
+            ConfigGlobal.AplicarEstilo(this);
         }
 
         private void ReporteVentas()

@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using pryCafeteriaEscolar.Base_de_datos;
+using pryCafeteriaEscolar.Configuracion;
 using pryCafeteriaEscolar.Productos;
 using System;
 using System.Collections.Generic;
@@ -91,6 +92,7 @@ namespace pryCafeteriaEscolar
             dataGridView2.AutoSizeColumnsMode =
             DataGridViewAutoSizeColumnsMode.Fill;
 
+            ConfigGlobal.AplicarEstilo(this);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
