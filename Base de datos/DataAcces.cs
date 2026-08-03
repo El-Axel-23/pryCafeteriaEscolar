@@ -9,7 +9,7 @@ namespace pryCafeteriaEscolar.Base_de_datos
 {
     internal class DataAcces
     {
-        private string cadena = "Server=localhost;" + "Database=CafeteriaDB4;" + "Uid=root;" + "Password=;" + "Port=3306;";
+        private string cadena = "server=localhost;" + "Database=cafeteriadb4;" + "Uid=root;" + "Password=;" + "Port=3306;";
 
         public MySqlConnection Dataacces()
         {
