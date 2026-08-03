@@ -135,5 +135,15 @@ namespace pryCafeteriaEscolar
         {
 
         }
+
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnProveedor_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
