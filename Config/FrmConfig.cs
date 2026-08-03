@@ -21,6 +21,7 @@ namespace pryCafeteriaEscolar.Configuracion
 
         private void FrmConfig_Load(object sender, EventArgs e)
         {
+            frmConfiguracion_Resize(null, null);
             CargarDatosEmpresa();
 
             if (cmbbxFuente.SelectedIndex == -1)
@@ -37,24 +38,25 @@ namespace pryCafeteriaEscolar.Configuracion
                 DataAcces data = new DataAcces();
                 MySqlConnection connection = data.Dataacces();
 
-                string Sql = @"SELECT nombreCafe, direccionCafe, telefonoCafe, correoCafe FROM Empresa LIMIT 1";
+                string sql = @"SELECT nombre, direccion, telefono, correo FROM InformacionCafeteria LIMIT 1";
 
-                MySqlCommand cmd = new MySqlCommand(Sql, connection);
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read())
                 {
-                    txtNombre.Text = reader["nombreCafe"].ToString();
-                    txtDireccion.Text = reader["direccionCafe"].ToString();
-                    txtTelefono.Text = reader["telefonoCafe"].ToString();
-                    txtCorreo.Text = reader["correoCafe"].ToString();
+                    txtNombre.Text = reader["nombre"].ToString();
+                    txtDireccion.Text = reader["direccion"].ToString();
+                    txtTelefono.Text = reader["telefono"].ToString();
+                    txtCorreo.Text = reader["correo"].ToString();
                 }
 
+                reader.Close();
                 connection.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar la información de la empresa: " + ex.Message);
+                MessageBox.Show("Error al cargar la información de la cafetería: " + ex.Message);
             }
         }
 
@@ -76,13 +78,13 @@ namespace pryCafeteriaEscolar.Configuracion
         {
             if (trackTemas.Value == 0)
             {
-                this.BackColor = Color.WhiteSmoke;
-                CambiarColorControles(this, Color.WhiteSmoke, Color.Black);
+                this.BackColor = Color.NavajoWhite;
+                CambiarColorControles(this, Color.NavajoWhite, Color.Black);
             }
             else
             {
-                this.BackColor = Color.FromArgb(45, 45, 48);
-                CambiarColorControles(this, Color.FromArgb(45, 45, 48), Color.White);
+                this.BackColor = Color.FromArgb(64, 0, 0);
+                CambiarColorControles(this, Color.FromArgb(64, 0, 0), Color.White);
             }
         }
 
@@ -91,10 +93,6 @@ namespace pryCafeteriaEscolar.Configuracion
             CambiarTema();
         }
 
-        private void cmbbxFuente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void CambiarFuente(Control padre, float tamaño)
         {
@@ -117,26 +115,81 @@ namespace pryCafeteriaEscolar.Configuracion
         {
             if (trackTemas.Value == 0)
             {
-                ConfigGlobal.ColorFondo = Color.White;
+                ConfigGlobal.ColorFondo = Color.NavajoWhite;
                 ConfigGlobal.ColorTexto = Color.Black;
             }
             else
             {
-                ConfigGlobal.ColorFondo = Color.Black;
+                ConfigGlobal.ColorFondo = Color.FromArgb(64, 0, 0);
                 ConfigGlobal.ColorTexto = Color.White;
             }
 
-            if (cmbbxFuente.SelectedItem != null && float.TryParse(cmbbxFuente.SelectedItem.ToString(), out float nuevoTamanio))
+            if (cmbbxFuente.SelectedItem != null)
             {
-                ConfigGlobal.TamanioFuente = nuevoTamanio;
+                float tamaño;
+
+                if (float.TryParse(cmbbxFuente.SelectedItem.ToString(), out tamaño))
+                {
+                    ConfigGlobal.TamanioFuente = tamaño;
+                }
             }
 
             ConfigGlobal.ActualizarVentanasAbiertas();
+
+            MessageBox.Show("Cambios guardados correctamente.","Configuración",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             txtHoraSistema.Text = DateTime.Now.ToString("hh:mm:ss tt");
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            FrmLogin login = new FrmLogin();
+            login.Show();
+            Application.OpenForms["FrmAdministrador"]?.Close();
+            this.Hide();
+        }
+
+        private void frmConfiguracion_Resize(object sender, EventArgs e)
+        {
+            panelPrincipal.Left = (this.ClientSize.Width - panelPrincipal.Width) / 2;
+            panelPrincipal.Top = (this.ClientSize.Height - panelPrincipal.Height) / 2;
+        }
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbbxFuente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

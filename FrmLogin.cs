@@ -18,25 +18,24 @@ namespace pryCafeteriaEscolar
             if (string.IsNullOrWhiteSpace(txtUser.Text) ||
                 string.IsNullOrWhiteSpace(txtPassw.Text))
 
+            {
+                MessageBox.Show(
+                    "Por favor, llene todos los campos.",
+                    "Campos vacíos",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
 
-                if (string.IsNullOrWhiteSpace(txtUser.Text) || string.IsNullOrWhiteSpace(txtPassw.Text))
-                {
-                    MessageBox.Show(
-                        "Por favor, llene todos los campos.",
-                        "Campos vacíos",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
 
-                    txtUser.Focus();
-                    return;
-                }
+            txtUser.Focus();
+            return;
+            }
 
+            // 2. Crear conexión
             DataAcces conBD = new DataAcces();
 
             try
             {
-
                 using (MySqlConnection conexion = conBD.Dataacces())
                 {
                     if (conexion == null)
@@ -51,6 +50,7 @@ namespace pryCafeteriaEscolar
                         return;
                     }
 
+                    // Solo abrir si Dataacces() no la abrió anteriormente
                     if (conexion.State != ConnectionState.Open)
                     {
                         conexion.Open();
@@ -61,8 +61,7 @@ namespace pryCafeteriaEscolar
                         "WHERE usuario = @usuario " +
                         "AND contrasena = @contrasena";
 
-                    using (MySqlCommand comando =
-                           new MySqlCommand(query, conexion))
+                    using (MySqlCommand comando = new MySqlCommand(query, conexion))
                     {
                         comando.Parameters.AddWithValue(
                             "@usuario",
@@ -80,31 +79,30 @@ namespace pryCafeteriaEscolar
                         {
                             MessageBox.Show(
                                 "Usuario o contraseña incorrectos.",
-                                "Error",
+                                "Acceso denegado",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error
                             );
 
+                            txtPassw.Clear();
+                            txtPassw.Focus();
                             return;
                         }
 
-                        string rolUsuario =
-                            resultado.ToString().Trim();
+                        string rolUsuario = resultado.ToString().Trim();
 
                         if (rolUsuario.Equals(
                             "Administrador",
                             StringComparison.OrdinalIgnoreCase))
                         {
                             MessageBox.Show(
-                                "¡Bienvenido al sistema!",
-                                "Éxito",
+                                "¡Bienvenido, Administrador!",
+                                "Acceso correcto",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information
                             );
 
-                            FrmAdministrador administrador =
-                                new FrmAdministrador();
-
+                            FrmAdministrador administrador = new FrmAdministrador();
                             administrador.Show();
                             this.Hide();
                         }
@@ -113,15 +111,28 @@ namespace pryCafeteriaEscolar
                             StringComparison.OrdinalIgnoreCase))
                         {
                             MessageBox.Show(
-                                "¡Bienvenido al sistema!",
-                                "Éxito",
+                                "¡Bienvenido, Empleado!",
+                                "Acceso correcto",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information
                             );
 
-                            FrmEmpleado empleado =
-                                new FrmEmpleado();
+                            FrmEmpleado empleado = new FrmEmpleado();
+                            empleado.Show();
+                            this.Hide();
+                        }
+                        else if (rolUsuario.Equals(
+                            "Supervisor",
+                            StringComparison.OrdinalIgnoreCase))
+                        {
+                            MessageBox.Show(
+                                "El Supervisor será enviado al formulario de empleado.",
+                                "Acceso correcto",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information
+                            );
 
+                            FrmEmpleado empleado = new FrmEmpleado();
                             empleado.Show();
                             this.Hide();
                         }
@@ -140,8 +151,8 @@ namespace pryCafeteriaEscolar
             catch (MySqlException ex)
             {
                 MessageBox.Show(
-                    "Error con la base de datos: " + ex.Message,
-                    "Error",
+                    "Error con la base de datos:\n" + ex.Message,
+                    "Error de MySQL",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
@@ -149,7 +160,7 @@ namespace pryCafeteriaEscolar
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Ocurrió un error: " + ex.Message,
+                    "Ocurrió un error:\n" + ex.Message,
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
@@ -157,9 +168,5 @@ namespace pryCafeteriaEscolar
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
