@@ -21,7 +21,7 @@ namespace pryCafeteriaEscolar.Configuracion
 
         private void FrmConfig_Load(object sender, EventArgs e)
         {
-            frmConfiguracion_Resize(null, null);
+            frmConfiguracion_Resize(null, null);            
             CargarDatosEmpresa();
 
             if (cmbbxFuente.SelectedIndex == -1)
