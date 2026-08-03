@@ -555,15 +555,15 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        //private System.Windows.Forms.GroupBox groupBox1;
+        //private System.Windows.Forms.TextBox txtCorreo;
+        //private System.Windows.Forms.TextBox txtTelefono;
+       // private System.Windows.Forms.TextBox txtDireccion;
+        //private System.Windows.Forms.TextBox txtNombre;
+        //private System.Windows.Forms.Label label6;
+        //private System.Windows.Forms.Label label5;
+        //private System.Windows.Forms.Label label4;
+        //private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timer1;
     }
 }
