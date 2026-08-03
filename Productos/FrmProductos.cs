@@ -35,6 +35,8 @@ namespace pryCafeteriaEscolar.Productos
 
         private void FrmProductos_Load(object sender, EventArgs e)
         {
+            ConfigGlobal.AplicarEstilo(this);
+
             CargarProduct();
             CargarCategoriascmb();
 
@@ -51,6 +53,30 @@ namespace pryCafeteriaEscolar.Productos
 
                 using (MySqlConnection connection = data.Dataacces())
                 {
+
+                    string sql = @"
+                SELECT 
+                    p.codigo_barra,
+                    p.id_categoria,
+                    c.nombre AS categoria,
+                    p.descripcion,
+                    p.precio_venta,
+                    p.stock
+                FROM Producto p
+                INNER JOIN Categoria c 
+                    ON p.id_categoria = c.id_categoria
+                WHERE p.codigo_barra LIKE @buscar
+                   OR p.descripcion LIKE @buscar
+                   OR c.nombre LIKE @buscar";
+
+                    MySqlDataAdapter adapter =
+                        new MySqlDataAdapter(sql, connection);
+
+                    adapter.SelectCommand.Parameters.AddWithValue(
+                        "@buscar",
+                        "%" + txtBuscarProduct.Text.Trim() + "%"
+                    );
+
                     string sql = @"SELECT p.codigo_barra,p.id_categoria,c.nombre AS categoria,
                            p.descripcion,p.precio_venta,p.stock
                            FROM Producto p
@@ -65,6 +91,7 @@ namespace pryCafeteriaEscolar.Productos
                     adapter.SelectCommand.Parameters.AddWithValue("@buscar",
                         "%" + txtBuscarProduct.Text.Trim() + "%");
 
+
                     DataTable table = new DataTable();
                     adapter.Fill(table);
 
@@ -75,7 +102,12 @@ namespace pryCafeteriaEscolar.Productos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(
+                    "Error al buscar el producto: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
         }
         private void CargarProduct()
