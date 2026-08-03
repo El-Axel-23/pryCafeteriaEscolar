@@ -77,7 +77,7 @@ namespace pryCafeteriaEscolar.Productos
                         "%" + txtBuscarProduct.Text.Trim() + "%"
                     );
 
-                    string sql = @"SELECT p.codigo_barra,p.id_categoria,c.nombre AS categoria,
+                     sql = @"SELECT p.codigo_barra,p.id_categoria,c.nombre AS categoria,
                            p.descripcion,p.precio_venta,p.stock
                            FROM Producto p
                            INNER JOIN Categoria c
@@ -86,7 +86,7 @@ namespace pryCafeteriaEscolar.Productos
                            OR p.descripcion LIKE @buscar
                            OR c.nombre LIKE @buscar";
 
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(sql, connection);
+                  
 
                     adapter.SelectCommand.Parameters.AddWithValue("@buscar",
                         "%" + txtBuscarProduct.Text.Trim() + "%");

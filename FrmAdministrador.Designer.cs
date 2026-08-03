@@ -112,7 +112,7 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(268, 571);
 
             this.tableLayoutPanel1.TabIndex = 14;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            //this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // pictureBox1
             // 
@@ -317,7 +317,7 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "¡Bienvenido!";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            //this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnCategoria
             // 
@@ -366,7 +366,7 @@
             this.Text = "Cafetería Escolar";
             this.TransparencyKey = System.Drawing.Color.RosyBrown;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmAdministrador_Load_1);
+            //this.Load += new System.EventHandler(this.FrmAdministrador_Load_1);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
