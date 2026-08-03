@@ -21,6 +21,7 @@ namespace pryCafeteriaEscolar.Configuracion
 
         private void FrmConfig_Load(object sender, EventArgs e)
         {
+            frmConfiguracion_Resize(null, null);
             CargarDatosEmpresa();
 
             if (cmbbxFuente.SelectedIndex == -1)
@@ -37,24 +38,25 @@ namespace pryCafeteriaEscolar.Configuracion
                 DataAcces data = new DataAcces();
                 MySqlConnection connection = data.Dataacces();
 
-                string Sql = @"SELECT nombreCafe, direccionCafe, telefonoCafe, correoCafe FROM Empresa LIMIT 1";
+                string sql = @"SELECT nombre, direccion, telefono, correo FROM InformacionCafeteria LIMIT 1";
 
-                MySqlCommand cmd = new MySqlCommand(Sql, connection);
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read())
                 {
-                    txtNombre.Text = reader["nombreCafe"].ToString();
-                    txtDireccion.Text = reader["direccionCafe"].ToString();
-                    txtTelefono.Text = reader["telefonoCafe"].ToString();
-                    txtCorreo.Text = reader["correoCafe"].ToString();
+                    txtNombre.Text = reader["nombre"].ToString();
+                    txtDireccion.Text = reader["direccion"].ToString();
+                    txtTelefono.Text = reader["telefono"].ToString();
+                    txtCorreo.Text = reader["correo"].ToString();
                 }
 
+                reader.Close();
                 connection.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar la información de la empresa: " + ex.Message);
+                MessageBox.Show("Error al cargar la información de la cafetería: " + ex.Message);
             }
         }
 
@@ -148,6 +150,46 @@ namespace pryCafeteriaEscolar.Configuracion
             login.Show();
             Application.OpenForms["FrmAdministrador"]?.Close();
             this.Hide();
+        }
+
+        private void frmConfiguracion_Resize(object sender, EventArgs e)
+        {
+            panelPrincipal.Left = (this.ClientSize.Width - panelPrincipal.Width) / 2;
+            panelPrincipal.Top = (this.ClientSize.Height - panelPrincipal.Height) / 2;
+        }
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbbxFuente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -15,9 +15,9 @@ namespace pryCafeteriaEscolar
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            // 1. Validar campos vacíos
             if (string.IsNullOrWhiteSpace(txtUser.Text) ||
                 string.IsNullOrWhiteSpace(txtPassw.Text))
+
             {
                 MessageBox.Show(
                     "Por favor, llene todos los campos.",
@@ -26,8 +26,9 @@ namespace pryCafeteriaEscolar
                     MessageBoxIcon.Warning
                 );
 
-                txtUser.Focus();
-                return;
+
+            txtUser.Focus();
+            return;
             }
 
             // 2. Crear conexión
@@ -167,40 +168,5 @@ namespace pryCafeteriaEscolar
             }
         }
 
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void FrmLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUser_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        //private void FrmLogin_Load(object sender, EventArgs e)
-        //{
-            
-        //}
-
-        private void FrmLogin_Resize(object sender, EventArgs e)
-        {
-            
-           
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-       // private void btnIngresar_Click_1(object sender, EventArgs e)
-        //{
-
-        //}
     }
 }
