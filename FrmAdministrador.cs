@@ -17,6 +17,8 @@ namespace pryCafeteriaEscolar
         public FrmAdministrador()
         {
             InitializeComponent();
+
+            ConfigGlobal.AplicarEstilo(this);
         }
 
 
@@ -132,6 +134,21 @@ namespace pryCafeteriaEscolar
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FrmAdministrador_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

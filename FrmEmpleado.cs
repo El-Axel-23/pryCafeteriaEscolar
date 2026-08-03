@@ -86,6 +86,9 @@ namespace pryCafeteriaEscolar
             CargarVistaEnPanel(new Ventas());
         }
 
-        
+        private void FrmEmpleado_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -25,6 +25,8 @@ namespace pryCafeteriaEscolar
 
             CargarEntradas();
             ActualizarContadores();
+
+            ConfigGlobal.AplicarEstilo(this);
         }
 
         // =====================================================
