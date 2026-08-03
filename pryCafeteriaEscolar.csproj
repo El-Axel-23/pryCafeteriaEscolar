@@ -37,7 +37,7 @@
       <HintPath>packages\BCrypt.Net-Next.4.2.0\lib\net472\BCrypt-Net-Next.dll</HintPath>
     </Reference>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
-      <HintPath>packages\BouncyCastle.Cryptography.2.6.2\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+      <HintPath>packages\BouncyCastle.Cryptography.2.7.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf, Version=3.35.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>packages\Google.Protobuf.3.35.1\lib\net45\Google.Protobuf.dll</HintPath>
@@ -60,8 +60,8 @@
     <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=10.0.0.10, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Extensions.Logging.Abstractions.10.0.10\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=9.7.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>packages\MySql.Data.9.7.0\lib\net462\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=26.7.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.26.7.0\lib\net462\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="MySqlConnector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
       <HintPath>packages\MySqlConnector.2.6.1\lib\net471\MySqlConnector.dll</HintPath>
@@ -130,24 +130,6 @@
     <Compile Include="FrmEntradas.Designer.cs">
       <DependentUpon>FrmEntradas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Productos\FrmNuevoproducto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Productos\FrmNuevoproducto.Designer.cs">
-      <DependentUpon>FrmNuevoproducto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Productos\FrmNuevoproveedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Productos\FrmNuevoproveedor.Designer.cs">
-      <DependentUpon>FrmNuevoproveedor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Productos\FrmProductos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Productos\FrmProductos.Designer.cs">
-      <DependentUpon>FrmProductos.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +141,24 @@
     </Compile>
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\FrmCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\FrmCategorias.Designer.cs">
+      <DependentUpon>FrmCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\FrmProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\FrmProductos.Designer.cs">
+      <DependentUpon>FrmProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\FrmProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\FrmProveedores.Designer.cs">
+      <DependentUpon>FrmProveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -189,20 +189,20 @@
     <EmbeddedResource Include="FrmEntradas.resx">
       <DependentUpon>FrmEntradas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Productos\FrmNuevoproducto.resx">
-      <DependentUpon>FrmNuevoproducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Productos\FrmNuevoproveedor.resx">
-      <DependentUpon>FrmNuevoproveedor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Productos\FrmProductos.resx">
-      <DependentUpon>FrmProductos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmAdministrador.resx">
       <DependentUpon>FrmAdministrador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\FrmCategorias.resx">
+      <DependentUpon>FrmCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\FrmProductos.resx">
+      <DependentUpon>FrmProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\FrmProveedores.resx">
+      <DependentUpon>FrmProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
