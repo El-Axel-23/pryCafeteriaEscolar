@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Windows.Forms;
+using pryCafeteriaEscolar.Productos;
 
 namespace pryCafeteriaEscolar
 {
@@ -86,6 +87,9 @@ namespace pryCafeteriaEscolar
             CargarVistaEnPanel(new Ventas());
         }
 
-        
+        private void FrmEmpleado_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

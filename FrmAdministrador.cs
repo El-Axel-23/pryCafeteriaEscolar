@@ -1,4 +1,5 @@
 ﻿using pryCafeteriaEscolar.Configuracion;
+using pryCafeteriaEscolar.Productos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,8 @@ namespace pryCafeteriaEscolar
         public FrmAdministrador()
         {
             InitializeComponent();
+
+            ConfigGlobal.AplicarEstilo(this);
         }
 
 
@@ -78,7 +81,7 @@ namespace pryCafeteriaEscolar
             splitContainer1.Panel2.Controls.Clear();
 
             // 2. Instanciamos FrmProductos
-            FrmProductos productos = new FrmProductos();
+            FrmProductos productos= new FrmProductos();
 
             // 3. Le quitamos los bordes de ventana independiente y adaptamos el tamaño
             productos.TopLevel = false;
@@ -136,12 +139,14 @@ namespace pryCafeteriaEscolar
 
         }
 
+
         private void btnCategoria_Click(object sender, EventArgs e)
         {
 
         }
 
         private void btnProveedor_Click(object sender, EventArgs e)
+
         {
 
         }

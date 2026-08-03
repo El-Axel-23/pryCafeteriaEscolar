@@ -59,6 +59,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -71,8 +72,9 @@
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel2);
-            this.splitContainer1.Size = new System.Drawing.Size(1234, 577);
-            this.splitContainer1.SplitterDistance = 269;
+            this.splitContainer1.Size = new System.Drawing.Size(926, 469);
+            this.splitContainer1.SplitterDistance = 250;
+            this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -89,6 +91,7 @@
             this.tableLayoutPanel1.Controls.Add(this.button5, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.button4, 0, 5);
+
             this.tableLayoutPanel1.Controls.Add(this.btnCategoria, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.btnConfiguracion, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.btnProveedor, 0, 8);
@@ -107,16 +110,20 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.02669F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.02669F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(268, 571);
+
             this.tableLayoutPanel1.TabIndex = 14;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox1.Image = global::pryCafeteriaEscolar.Properties.Resources.cafe;
+
             this.pictureBox1.Location = new System.Drawing.Point(68, 4);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(131, 74);
+            this.pictureBox1.Size = new System.Drawing.Size(98, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -130,10 +137,12 @@
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
             this.button6.Location = new System.Drawing.Point(3, 114);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(262, 53);
+
             this.button6.TabIndex = 0;
             this.button6.Text = "Ventas";
             this.button6.UseVisualStyleBackColor = false;
@@ -148,10 +157,12 @@
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
             this.button2.Location = new System.Drawing.Point(3, 171);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(262, 53);
+
             this.button2.TabIndex = 1;
             this.button2.Text = "Productos";
             this.button2.UseVisualStyleBackColor = false;
@@ -166,10 +177,12 @@
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
             this.button3.Location = new System.Drawing.Point(3, 228);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(262, 53);
+
             this.button3.TabIndex = 2;
             this.button3.Text = "Reportes";
             this.button3.UseVisualStyleBackColor = false;
@@ -184,10 +197,12 @@
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
             this.button5.Location = new System.Drawing.Point(3, 342);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(262, 53);
+
             this.button5.TabIndex = 4;
             this.button5.Text = "Cajas";
             this.button5.UseVisualStyleBackColor = false;
@@ -202,10 +217,12 @@
             this.btnConfiguracion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfiguracion.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracion.Image")));
             this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
             this.btnConfiguracion.Location = new System.Drawing.Point(3, 513);
             this.btnConfiguracion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(262, 56);
+
             this.btnConfiguracion.TabIndex = 5;
             this.btnConfiguracion.Text = "Configuración";
             this.btnConfiguracion.UseVisualStyleBackColor = false;
@@ -215,10 +232,12 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
+
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(7, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(253, 24);
+
             this.label3.TabIndex = 7;
             this.label3.Text = "\"Sistema de control de ventas\"";
             // 
@@ -231,10 +250,12 @@
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
             this.button4.Location = new System.Drawing.Point(3, 285);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(262, 53);
+
             this.button4.TabIndex = 3;
             this.button4.Text = "Entradas";
             this.button4.UseVisualStyleBackColor = false;
@@ -245,20 +266,20 @@
             this.tableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 14F));
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.pictureBox2, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(1, 0);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(-23, 0);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.51852F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.48148F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 385F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(960, 577);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 313F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 13F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(720, 469);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // label1
@@ -266,9 +287,10 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 529);
+            this.label1.Location = new System.Drawing.Point(14, 430);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(897, 32);
+            this.label1.Size = new System.Drawing.Size(692, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Administra los productos, ventas y movimientos de la cafetería escolar";
             // 
@@ -276,10 +298,10 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = global::pryCafeteriaEscolar.Properties.Resources.cafe;
-            this.pictureBox2.Location = new System.Drawing.Point(166, 139);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(124, 113);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(628, 365);
+            this.pictureBox2.Size = new System.Drawing.Size(471, 297);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -288,12 +310,14 @@
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 24);
+            this.label2.Location = new System.Drawing.Point(2, 19);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(954, 105);
+            this.label2.Size = new System.Drawing.Size(716, 86);
             this.label2.TabIndex = 1;
             this.label2.Text = "¡Bienvenido!";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnCategoria
             // 
@@ -331,16 +355,18 @@
             // 
             // FrmAdministrador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1234, 577);
+            this.ClientSize = new System.Drawing.Size(926, 469);
             this.Controls.Add(this.splitContainer1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmAdministrador";
             this.Text = "Cafetería Escolar";
             this.TransparencyKey = System.Drawing.Color.RosyBrown;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmAdministrador_Load_1);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
