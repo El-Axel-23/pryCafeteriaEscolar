@@ -134,6 +134,22 @@ namespace pryCafeteriaEscolar
 
         }
 
+        // Métodos añadidos para satisfacer los controladores de eventos referenciados desde el diseñador
+        private void FrmAdministrador_Load_1(object sender, EventArgs e)
+        {
+            // Intentionally left blank
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            // Intentionally left blank
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            // Intentionally left blank
+        }
+
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
 

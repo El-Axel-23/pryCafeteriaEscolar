@@ -108,7 +108,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnProductos.BackColor = System.Drawing.Color.Beige;
             this.btnProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductos.Image = global::pryCafeteriaEscolar.Properties.Resources._3;
+            this.btnProductos.Image = global::pryCafeteriaEscolar.Properties.Resources.img3;
             this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProductos.Location = new System.Drawing.Point(2, 255);
             this.btnProductos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -125,7 +125,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.BackColor = System.Drawing.Color.Beige;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::pryCafeteriaEscolar.Properties.Resources._1;
+            this.button2.Image = global::pryCafeteriaEscolar.Properties.Resources.img1_png;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(2, 205);
             this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -228,7 +228,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::pryCafeteriaEscolar.Properties.Resources._1;
+            this.pictureBox3.Image = global::pryCafeteriaEscolar.Properties.Resources.img1_png;
             this.pictureBox3.Location = new System.Drawing.Point(16, 133);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(28, 22);
