@@ -21,6 +21,7 @@ namespace pryCafeteriaEscolar.Configuracion
 
         private void FrmConfig_Load(object sender, EventArgs e)
         {
+            frmConfiguracion_Resize(null, null);
             CargarDatosEmpresa();
 
             if (cmbbxFuente.SelectedIndex == -1)
@@ -151,6 +152,11 @@ namespace pryCafeteriaEscolar.Configuracion
             this.Hide();
         }
 
+        private void frmConfiguracion_Resize(object sender, EventArgs e)
+        {
+            panelPrincipal.Left = (this.ClientSize.Width - panelPrincipal.Width) / 2;
+            panelPrincipal.Top = (this.ClientSize.Height - panelPrincipal.Height) / 2;
+        }
         private void label9_Click(object sender, EventArgs e)
         {
 
@@ -162,6 +168,26 @@ namespace pryCafeteriaEscolar.Configuracion
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
         {
 
         }

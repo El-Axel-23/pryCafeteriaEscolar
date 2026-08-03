@@ -22,6 +22,7 @@ namespace pryCafeteriaEscolar.Reportes
 
         private void FrmReportes_Load(object sender, EventArgs e)
         {
+            frmReportes_Resize(null, null);
             cmbTipoReporte.Items.Add("Ventas");
             cmbTipoReporte.Items.Add("Productos");
             cmbTipoReporte.SelectedIndex = 0;
@@ -73,6 +74,12 @@ namespace pryCafeteriaEscolar.Reportes
             {
                 ReporteVentas();
             }
+        }
+
+        private void frmReportes_Resize(object sender, EventArgs e)
+        {
+            panelPrincipal.Left = (this.ClientSize.Width - panelPrincipal.Width) / 2;
+            panelPrincipal.Top = (this.ClientSize.Height - panelPrincipal.Height) / 2;
         }
     }
 }
