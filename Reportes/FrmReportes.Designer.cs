@@ -31,12 +31,6 @@
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvReporte = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblVentas = new System.Windows.Forms.Label();
@@ -99,13 +93,6 @@
             this.dgvReporte.BackgroundColor = System.Drawing.Color.White;
             this.dgvReporte.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReporte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
             this.dgvReporte.Location = new System.Drawing.Point(21, 26);
             this.dgvReporte.Name = "dgvReporte";
             this.dgvReporte.ReadOnly = true;
@@ -114,50 +101,14 @@
             this.dgvReporte.Size = new System.Drawing.Size(686, 137);
             this.dgvReporte.TabIndex = 1;
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Fecha";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Hora";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Producto";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Categoria";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Cantidad";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Total";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(341, 10);
+            this.label8.Location = new System.Drawing.Point(341, 6);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 13);
+            this.label8.Size = new System.Drawing.Size(53, 13);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Detalles";
+            this.label8.Text = "Deudores";
             // 
             // panel3
             // 
@@ -175,11 +126,12 @@
             // lblVentas
             // 
             this.lblVentas.AutoSize = true;
-            this.lblVentas.Location = new System.Drawing.Point(85, 58);
+            this.lblVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVentas.Location = new System.Drawing.Point(97, 58);
             this.lblVentas.Name = "lblVentas";
-            this.lblVentas.Size = new System.Drawing.Size(35, 13);
+            this.lblVentas.Size = new System.Drawing.Size(21, 24);
             this.lblVentas.TabIndex = 6;
-            this.lblVentas.Text = "label9";
+            this.lblVentas.Text = "$";
             // 
             // label6
             // 
@@ -206,11 +158,13 @@
             // lblProductos
             // 
             this.lblProductos.AutoSize = true;
-            this.lblProductos.Location = new System.Drawing.Point(55, 58);
+            this.lblProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductos.Location = new System.Drawing.Point(92, 58);
             this.lblProductos.Name = "lblProductos";
-            this.lblProductos.Size = new System.Drawing.Size(35, 13);
+            this.lblProductos.Size = new System.Drawing.Size(21, 24);
             this.lblProductos.TabIndex = 7;
-            this.lblProductos.Text = "label9";
+            this.lblProductos.Text = "$";
+            this.lblProductos.Click += new System.EventHandler(this.lblProductos_Click);
             // 
             // label7
             // 
@@ -237,11 +191,12 @@
             // lblGanancias
             // 
             this.lblGanancias.AutoSize = true;
-            this.lblGanancias.Location = new System.Drawing.Point(70, 59);
+            this.lblGanancias.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGanancias.Location = new System.Drawing.Point(80, 58);
             this.lblGanancias.Name = "lblGanancias";
-            this.lblGanancias.Size = new System.Drawing.Size(35, 13);
+            this.lblGanancias.Size = new System.Drawing.Size(21, 24);
             this.lblGanancias.TabIndex = 5;
-            this.lblGanancias.Text = "label9";
+            this.lblGanancias.Text = "$";
             // 
             // label5
             // 
@@ -294,6 +249,7 @@
             this.btnGenerar.TabIndex = 6;
             this.btnGenerar.Text = "Generar Reporte";
             this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
             // label4
             // 
@@ -382,12 +338,6 @@
         private System.Windows.Forms.Panel panelPrincipal;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView dgvReporte;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblVentas;

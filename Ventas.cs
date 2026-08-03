@@ -99,7 +99,7 @@ namespace pryCafeteriaEscolar
                 DataAcces db = new DataAcces();
                 using (MySqlConnection conn = db.Dataacces())
                 {
-                    string query = "SELECT codigo_barra, precio_venta FROM Producto WHERE descripcion = @descripcion LIMIT 1";
+                    string query = "SELECT codigo_barra, precio_venta FROM Producto WHERE descripcion LIKE @descripcion LIMIT 1";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@descripcion", "%" + txtProduc.Text.Trim() + "%");
 

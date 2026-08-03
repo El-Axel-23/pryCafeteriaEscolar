@@ -1,5 +1,6 @@
 ﻿using pryCafeteriaEscolar.Configuracion;
 using pryCafeteriaEscolar.Productos;
+using pryCafeteriaEscolar.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,6 +51,8 @@ namespace pryCafeteriaEscolar
             button4.BackColor = System.Drawing.ColorTranslator.FromHtml("Beige");
             button3.BackColor = System.Drawing.ColorTranslator.FromHtml("Beige");
             button5.BackColor = System.Drawing.ColorTranslator.FromHtml("Beige");
+            btnCategoria.BackColor = System.Drawing.ColorTranslator.FromHtml("Beige");
+            btnProveedor.BackColor = System.Drawing.ColorTranslator.FromHtml("Beige");
         }
 
         private void btnConfiguracion_Click(object sender, EventArgs e)
@@ -121,7 +124,27 @@ namespace pryCafeteriaEscolar
         {
             RestablecerColorBotones(); // Limpia los colores de los demás botones
             button3.BackColor = System.Drawing.ColorTranslator.FromHtml("#F4A460");
+
+            FrmReportes frm = new FrmReportes();
+            frm.TopLevel = false; // Permite metelo en un contenedor/panel
+            frm.FormBorderStyle = FormBorderStyle.None; // Quita los bordes de la ventana
+
+            CargarVistaEnPanel(frm);   
+            RestablecerColorBotones(); // Limpia los colores de los demás botones
+            button3.BackColor = System.Drawing.ColorTranslator.FromHtml("#F4A460");
+
+            splitContainer1.Panel2.Controls.Clear();
+
+            FrmReportes reportes = new FrmReportes();
+
+            reportes.TopLevel = false;
+            reportes.FormBorderStyle = FormBorderStyle.None;
+            reportes.Dock = DockStyle.Fill;
+
+            splitContainer1.Panel2.Controls.Add(reportes);
+            reportes.Show();
         }
+
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -158,13 +181,27 @@ namespace pryCafeteriaEscolar
 
         private void btnCategoria_Click(object sender, EventArgs e)
         {
+            RestablecerColorBotones(); // Limpia los colores de los demás botones
+            btnCategoria.BackColor = System.Drawing.ColorTranslator.FromHtml("#F4A460");
 
+            FrmCategorias frm = new FrmCategorias();
+            frm.TopLevel = false; // Permite metelo en un contenedor/panel
+            frm.FormBorderStyle = FormBorderStyle.None; // Quita los bordes de la ventana
+
+            CargarVistaEnPanel(frm);
         }
 
         private void btnProveedor_Click(object sender, EventArgs e)
 
         {
+            RestablecerColorBotones(); // Limpia los colores de los demás botones
+            btnProveedor.BackColor = System.Drawing.ColorTranslator.FromHtml("#F4A460");
 
+            FrmProveedores frm = new FrmProveedores();
+            frm.TopLevel = false; // Permite metelo en un contenedor/panel
+            frm.FormBorderStyle = FormBorderStyle.None; // Quita los bordes de la ventana
+
+            CargarVistaEnPanel(frm);   
         }
     }
 }

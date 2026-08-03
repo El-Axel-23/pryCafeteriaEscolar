@@ -35,39 +35,117 @@ namespace pryCafeteriaEscolar.Reportes
         private void ReporteVentas()
         {
             DataAcces data = new DataAcces();
+
             using (MySqlConnection conexion = data.Dataacces())
             {
-                conexion.Open();
-                string sql = @"SELECT v.fecha, v.hora, p.nombre AS Producto, c.nombre AS Categoria, d.cantidad, d.precio * d.cantidad AS Total FROM ventas v INNER JOIN detalle_venta d ON v.id_venta=d.id_venta INNER JOIN productos p ON d.id_producto=p.id_producto INNER JOIN categoria c ON p.id_categoria=c.id_categoria WHERE v.fecha BETWEEN @desde AND @hasta";
-                MySqlCommand cmd = new MySqlCommand(sql, conexion);
+                string sqlResumen = @"
+        SELECT
+            IFNULL(SUM(total),0) AS Ganancias,
+            COUNT(*) AS Ventas,
+            (
+                SELECT IFNULL(SUM(dv.cantidad),0)
+                FROM Detalle_venta dv
+                INNER JOIN Venta v2
+                ON dv.id_venta = v2.id_venta
+                WHERE DATE(v2.fecha) BETWEEN @desde AND @hasta
+            ) AS Productos
+        FROM Venta
+        WHERE DATE(fecha) BETWEEN @desde AND @hasta";
+
+                MySqlCommand cmd = new MySqlCommand(sqlResumen, conexion);
+
                 cmd.Parameters.AddWithValue("@desde", dtpDesde.Value.Date);
                 cmd.Parameters.AddWithValue("@hasta", dtpHasta.Value.Date);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    lblGanancias.Text = "$ " +
+                        Convert.ToDecimal(dr["Ganancias"]).ToString("N2");
+
+                    lblVentas.Text = dr["Ventas"].ToString();
+
+                    lblProductos.Text = dr["Productos"].ToString();
+                }
+
+                dr.Close();
+
+                string sqlDeudores = @"
+        SELECT
+            c.matricula AS Matricula,
+            CONCAT(c.nombre,' ',c.apellido_paterno,' ',IFNULL(c.apellido_materno,'')) AS Cliente,
+            c.carrera AS Carrera,
+            c.cuatrimestre AS Cuatrimestre,
+            c.grupo AS Grupo,
+            c.telefono AS Telefono,
+            v.saldo_pendiente AS Adeudo
+        FROM Cliente c
+        INNER JOIN Venta v
+            ON c.id_cliente = v.id_cliente
+        WHERE v.es_credito = 1
+        AND v.saldo_pendiente > 0
+        ORDER BY v.saldo_pendiente DESC";
+
+                MySqlDataAdapter da = new MySqlDataAdapter(sqlDeudores, conexion);
+
                 DataTable tabla = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
                 da.Fill(tabla);
+
                 dgvReporte.DataSource = tabla;
             }
-            CalcularDatos();
         }
 
         private void CalcularDatos()
         {
-            decimal ganancias = 0;
-            int ventas = dgvReporte.Rows.Count;
-            int productos = 0;
+            DataAcces data = new DataAcces();
 
-            foreach (DataGridViewRow fila in dgvReporte.Rows)
+            using (MySqlConnection conexion = data.Dataacces())
             {
-                ganancias += Convert.ToDecimal(fila.Cells["Total"].Value);
-                productos += Convert.ToInt32(fila.Cells["Cantidad"].Value);
+
+                string sql = @"
+        SELECT
+
+        IFNULL(SUM(total),0) AS Ganancias,
+
+        COUNT(*) AS Ventas,
+
+        (
+            SELECT IFNULL(SUM(cantidad),0)
+            FROM Detalle_venta dv
+            INNER JOIN Venta v2
+            ON dv.id_venta=v2.id_venta
+            WHERE DATE(v2.fecha)
+            BETWEEN @desde AND @hasta
+        ) AS Productos
+
+        FROM Venta
+
+        WHERE DATE(fecha)
+        BETWEEN @desde AND @hasta";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conexion);
+
+                cmd.Parameters.AddWithValue("@desde", dtpDesde.Value.Date);
+                cmd.Parameters.AddWithValue("@hasta", dtpHasta.Value.Date);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    lblGanancias.Text = "$ " +
+                        Convert.ToDecimal(dr["Ganancias"]).ToString("N2");
+
+                    lblVentas.Text =
+                        dr["Ventas"].ToString();
+
+                    lblProductos.Text =
+                        dr["Productos"].ToString();
+                }
             }
-
-            lblGanancias.Text = "$" + ganancias.ToString("N2");
-
-            lblVentas.Text = ventas.ToString();
-
-            lblProductos.Text = productos.ToString();
         }
+
         private void btnGenerar_Click(object sender, EventArgs e)
         {
             if (cmbTipoReporte.Text == "Ventas")
@@ -80,6 +158,11 @@ namespace pryCafeteriaEscolar.Reportes
         {
             panelPrincipal.Left = (this.ClientSize.Width - panelPrincipal.Width) / 2;
             panelPrincipal.Top = (this.ClientSize.Height - panelPrincipal.Height) / 2;
+        }
+
+        private void lblProductos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
